@@ -1,95 +1,114 @@
+"use client";
 import Image from 'next/image'
 import styles from './page.module.css'
+import './globals.css'
+import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
+import  Account from './components/Account'
+import { WagmiConfig } from 'wagmi'
+import { arbitrum, mainnet } from 'wagmi/chains'
+
+import ConnectButton from './components/ConnectButton';
+
+
+import { useMediaQuery } from 'react-responsive';
+
+import Link from 'next/link'
+
+// 1. Get projectId
+const projectId = '76e490f32ea4fd8fc7071f1d3ed3cc6d'
+
+// 2. Create wagmiConfig
+const metadata = {
+  name: 'Web3Modal',
+  description: 'Web3Modal Example',
+  url: 'https://web3modal.com',
+  icons: ['https://avatars.githubusercontent.com/u/37784886']
+}
+
+const chains = [mainnet, arbitrum]
+const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
+
+// 3. Create modal
+createWeb3Modal({ wagmiConfig, projectId, chains })
+
 
 export default function Home() {
+  const isMobile = useMediaQuery({ maxWidth: 900});
+  
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+  <WagmiConfig config = {wagmiConfig}> 
+  <div className="home display-flex">
+  <div className={'home-container display-flex-row' + (isMobile ? ' mobile' : '')}>
+    <div className="home-left display-flex-col">
+      <h1 className="margin-bottom font-secondary">Title Goes Here</h1>
+      <p className="padding-top padding-bottom">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+      <Link href ="/dashboard">Enter App </Link>
+    </div>
+    <div className="home-right display-flex">
+      <pre className="disable-highlight">
+        {!isMobile
+          ? `....................................................................................................
+....................................................................................................
+....................................................................................................
+....................................................................................................
+....................................................................................................
+............../,...&,#..&#..........................................................................
+..............*(*.&&*&#//(..........................................................................
+.............#*,,*,/*//**.................,,,,,***,*,,,,...................///*(//**///*............
+.............%*/,/****,,...............*****//*//**/*/**,,,,..............****,***,..,,,,,..........
+............((////**/***((*(/,,,....*,**//(///(((////////**,,,,.............//****,....,............
+...........%%#(#%#%,*,*,*,,.......,/***/(((//(///(//////***,,.,,...........,...../,.................
+...........,,,/,%/*,,***,*.......******//(/(((#%#////////*/,,,,.,..........,.,****,.....*...........
+............****(*,,#*,/.........*,**/////(%%%&%#(////////**,,...*.........*.*,*,,,..,.,*...........
+...............**(**,*..........**,,**////#&#/(/(//*///**,*,,,.............*..,,,,,.,,*,*...........
+.................,..............,*,,**///(&/***//*//*,,**,*,,,.............*....,,,.,,..*...........
+................,,**,...........****,,/.......*,,,,*.......................*.....,,.,.../...........
+.................,.,............,***,*,.......,**(.*.........,,............*...,,*,...../.,.........
+.................,.,.............,**,*,,,.....,/***.,.......***............*.....,......,.,.........
+................,,..,............,**,*/**/,,&,*,,../.,,,,,,,/*.,...,.......*.....%,.......,.........
+.............*,,,,..,,,*..........,,*,****..,**,....*,.,,.*.,,,....,.......*..*,,,........,.........
+............***##,..**/(*,.........,,,,,,,.,,*,,..*..,,.,,,,,,,*...........*.*.,,/,..,.,............
+.........,*,*****,..*,,*,,/////////(//*....**,****,.,**...,....,.,,,,,******..,,,,,.,.,.............
+........//*,,*,*,*,,*,,***/((((#((((((,,,,.**,,/*/*/,*,,.....*.,..........,*.,,//*,.**,,,,./*.......
+......(///(/,,,,.,,..*,***,,******//*//,,**/*/.,,.........,.*,............,*.**,/(*,.**,,,.///......
+....,#(((##((/,.***.,*%&@*,,,*/####(##(,,,****,,,,*.,,.,.....,.......*/((((***(#*//,,,,,,/,.,,//....
+..,(#%######%##%##%###%%&%%#%%%%##%##%##,,,*,*,*%//***,,,.......(%%##(#########%##/*,,*(#(#####(#(..
+.((%%%%&%&&%%&%&&%&#&%%%&&&&&&&%#&%&&%%%%&%%(,,////*,*,,...../%%#%%%%%%%%%%%%%%%%#%%%%%&%#%%%##%##((
+%%#%&&&%&&%&&%&&&&&&&&&@&&&&&&&&%%&%&&&&@&&%%%&%%%(...,,*#&%&%%%&&&&&%%&%&&&%&&&&&&&&&%&%#%&%&%%###(
+#&%&&&&&@&&#&%&@&&&&@&@@@&@%@@@&&&%&&&&&@@&@@&@&&&&&@&&%&&@@&@%@&@&&&&%&&%%&&&&&&%&&&&&&&%&&&%&&&#&%
+((/(((((((#(((#((((/((((((((((((((((((((((((((((/(/((((/(//(((((/((((((((((/(///(((//((((////(//(///
+((/(/((((((/((((//(((((///(((((/(((/(((((((((((((((((((((((#(((//((((((((((((((((((((/((((/(/(/((((/
+((((///((//((//(/(/((/(//(//(((///////(((((((/((/(((((((/((/(/((//(((/(/(((((///(((((((((/((/(*(////`
+          : `............................................................
+............................................................
+............................................................
+.........(..,.&%.... .......................................
+........%,/%,%/............,,,,,, ...............*..........
+........,/*,/,,..(.....,/*//////***,,............,,.........
+.......*/#/#**,,.....***/(/////((/*,,,,......,.../...*......
+..,,,..,#***#*,.....****/#%&&#////**,,.......*,,,(.,,*......
+..........,.......,**,**/(////*//**,........ *..,*.,.*......
+..........,.,......,*,,,....*.,..............*...*...*......
+..........,.........,*,,,...(*,,....**.......*.......*......
+.........,,.,,......./**/*,,*../.,...,,.....,*,.,,...*,.....
+.......**,(.**/,......*,.,,,,.,..,...........*..,,..,(......
+...../*,***.,***/((((//,,.*,****,*....,.....,*.,/*.*,/.*....
+...(((((,,,,,*#&%(,*/((*,*,*.....,,.*......./****/,,,,../...
+.,#%#%%%%&&%%%%&%%%%%%%%%.,,*/**,*,...#%%#%&%#%###%##%##%##.
+#%%&%&&&&&&&&&&&&&&&&&&&&&&&%%,...,%%%&&&%%%&&&&&&&&&%%%%%%%
+(/(((((((((((/((/((((//(/(/(//(/((((/(((%/(((((((/(((((((///
+/((((///(((((((((/((((/((((((((((((((((((((((/((((((/((/(((/`}
+      </pre>
+    </div>
+  </div>
+</div>
+</WagmiConfig>
+);
 }
