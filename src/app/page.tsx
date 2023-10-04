@@ -2,53 +2,35 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import './globals.css'
-import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
-import  Account from './components/Account'
-import { WagmiConfig } from 'wagmi'
-import { arbitrum, mainnet } from 'wagmi/chains'
-
-import ConnectButton from './components/ConnectButton';
+import './styling/App.css';
+import './styling/themes.css';
+import './styling/Toast.css';
 
 
 import { useMediaQuery } from 'react-responsive';
 
 import Link from 'next/link'
 
-// 1. Get projectId
-const projectId = '76e490f32ea4fd8fc7071f1d3ed3cc6d'
-
-// 2. Create wagmiConfig
-const metadata = {
-  name: 'Web3Modal',
-  description: 'Web3Modal Example',
-  url: 'https://web3modal.com',
-  icons: ['https://avatars.githubusercontent.com/u/37784886']
-}
-
-const chains = [mainnet, arbitrum]
-const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
-
-// 3. Create modal
-createWeb3Modal({ wagmiConfig, projectId, chains })
-
 
 export default function Home() {
   const isMobile = useMediaQuery({ maxWidth: 900});
   
   return (
-  <WagmiConfig config = {wagmiConfig}> 
+ 
   <div className="home display-flex">
   <div className={'home-container display-flex-row' + (isMobile ? ' mobile' : '')}>
     <div className="home-left display-flex-col">
       <h1 className="margin-bottom font-secondary">Title Goes Here</h1>
-      <p className="padding-top padding-bottom">
+      <div className="body padding-full padding-top-half">
+      <p className="padding-top padding-bottom">  
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+        ex ercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
         dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum.
       </p>
+      </div>
       <Link href ="/dashboard">Enter App </Link>
     </div>
     <div className="home-right display-flex">
@@ -109,6 +91,6 @@ export default function Home() {
     </div>
   </div>
 </div>
-</WagmiConfig>
+
 );
 }

@@ -1,0 +1,12 @@
+.dash-icon {
+  background-color: var(--bg-color-light-1);
+}
+
+.dash-icon-size {
+  height: 30px;
+  width: 30px;
+}
+
+.dashboard-text {
+  max-width: calc(var(--page-max-width) / 2.5);
+}
