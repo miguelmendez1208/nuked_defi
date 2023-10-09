@@ -6,8 +6,8 @@ import ArrowUpIcon from "../assets/icons/ArrowUpIcon";
 
 import Data from './data';
 import Wallet from "./wallet";
-//todo add account
-//add connect
+
+import { Suspense } from 'react';
 //fix css ? it was working before ... 
 
 export default function DashboardPage() {
@@ -25,12 +25,14 @@ export default function DashboardPage() {
                 <div className="horizontal-center font-xxl font-bold-half font-secondary">Thing 1</div>
                 <div className="horizontal-center">
                   <div className="dashboard-text text-center text-color-light-4">
-                    Token
+                    <span> Token </span>
                     <span> APY</span>
                     <span> Available</span>
                     <span> Deposited</span>
                     <span> TVL</span>
-                    <Data/>
+                    <Suspense fallback={<p>Loading</p>}>
+                      <Data/>
+                    </Suspense>
                   </div>
                 </div>
                 <div className="horizontal-center"></div>

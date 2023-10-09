@@ -1,4 +1,4 @@
-.dash-icon {
+  .dash-icon {
     background-color: var(--bg-color-light-1);
   }
   
@@ -11,3 +11,6 @@
     max-width: calc(var(--page-max-width) / 2.5);
   }
   
+  .list-style-type {
+    list-style-type: none
+  }
