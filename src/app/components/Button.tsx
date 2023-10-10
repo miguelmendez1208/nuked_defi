@@ -44,6 +44,7 @@ const Button = (props: ButtonProps) => {
         className +
         (disabled ? ' disabled-text' : ' clickable')
       }
+      aria-label={text}
     >
       <span className={'button-contents w-100' + (disabled ? ' disabled-text' : '')}>
         <div className="button-icon-start">{iconStart}</div>

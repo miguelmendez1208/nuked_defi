@@ -3,7 +3,7 @@ import "../styling/DashboardPage.css";
 import MoonIcon from "../assets/icons/MoonIcon";
 import PlayIcon from "../assets/icons/PlayIcon";
 import ArrowUpIcon from "../assets/icons/ArrowUpIcon";
-
+import SideMenu from "../components/SideMenu";
 import Data from './data';
 import Wallet from "./wallet";
 
@@ -89,6 +89,8 @@ export default function DashboardPage() {
     };
   
     return (
+      <>
+      <SideMenu/>
       <div className="dashboard-page w-100 page-content-max-width">
         <div className="display-flex-col w-100 gap-triple">
           <div className="display-flex-row">  {buildDashPositions()}  </div>
@@ -99,5 +101,6 @@ export default function DashboardPage() {
         </div>
         <Wallet></Wallet>
       </div>
+      </>
     );
   }

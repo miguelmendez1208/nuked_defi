@@ -5,7 +5,7 @@ import './globals.css'
 import './styling/App.css';
 import './styling/themes.css';
 import './styling/Toast.css';
-
+import SideMenu from './components/SideMenu';
 
 import { useMediaQuery } from 'react-responsive';
 
@@ -16,7 +16,8 @@ export default function Home() {
   const isMobile = useMediaQuery({ maxWidth: 900});
   
   return (
- 
+  <>
+  <SideMenu/>
   <div className="home display-flex">
   <div className={'home-container display-flex-row' + (isMobile ? ' mobile' : '')}>
     <div className="home-left display-flex-col">
@@ -91,6 +92,6 @@ export default function Home() {
     </div>
   </div>
 </div>
-
+</>
 );
 }
