@@ -10,3 +10,19 @@
 .dashboard-text {
   max-width: calc(var(--page-max-width) / 2.5);
 }
+
+.list-style-type {
+  list-style-type: none
+}
+
+.gridDashboard {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  gap:30px;
+  padding:5px;
+}
+
+.gridDashboard > div {
+  text-align: center;
+  
+}

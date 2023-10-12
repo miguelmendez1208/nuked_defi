@@ -1,5 +1,4 @@
-import "./DashboardPage.css";
-import styles from './styles.module.css'
+import "../styling/DashboardPage.css";
 
 interface AnswerItem {
     id: number;
@@ -37,19 +36,19 @@ export default async function Data(){
     
     const listItems = answer.map((item: AnswerItem) =>(
         <li key ={item.id}>
-            <div className={styles.gridDashboard}> 
-            <span>{item.name} </span> 
-            <span> {item.apy} </span> 
-            <span> {item.available} </span>
-            <span> {item.deposited} </span>
-            <span> {item.tvl} </span>
-            <span> {item.abi} </span>
+            <div className="gridDashboard"> 
+            <div>{item.name} </div> 
+            <div> {item.apy} </div> 
+            <div> {item.available} </div>
+            <div> {item.deposited} </div>
+            <div> {item.tvl} </div>
+            <div> {item.abi} </div>
             </div>
         </li>
     ));
 
     return (
-        <ul className="list-stype-type">{listItems}</ul>
+        <ul className="list-style-type">{listItems}</ul>
     );
 }
 

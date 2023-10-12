@@ -17,7 +17,6 @@ export default function Home() {
   
   return (
   <>
-  <SideMenu/>
   <div className="home display-flex">
   <div className={'home-container display-flex-row' + (isMobile ? ' mobile' : '')}>
     <div className="home-left display-flex-col">

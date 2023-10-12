@@ -2,10 +2,11 @@
 import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
 
 import { WagmiConfig } from 'wagmi'
-import { arbitrum, mainnet } from 'wagmi/chains'
+import { arbitrum, mainnet, goerli } from 'wagmi/chains'
 
 import  Account from '../components/Account'
 import ConnectButton from '../components/ConnectButton';
+import SendMoney from '../components/SendMoney'
 // 1. Get projectId
 const projectId = '76e490f32ea4fd8fc7071f1d3ed3cc6d'
 
@@ -17,7 +18,7 @@ const metadata = {
   icons: ['https://avatars.githubusercontent.com/u/37784886']
 }
 
-const chains = [mainnet, arbitrum]
+const chains = [mainnet, arbitrum, goerli]
 const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 
 // 3. Create modal
@@ -28,6 +29,7 @@ export default function Wallet() {
     <WagmiConfig config={wagmiConfig}>
         <Account/>
         <ConnectButton/>
+        <SendMoney/>
     </WagmiConfig>
   )
 }
