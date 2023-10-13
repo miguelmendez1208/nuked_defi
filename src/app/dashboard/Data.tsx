@@ -1,5 +1,5 @@
 import "../styling/DashboardPage.css";
-
+import Wallet from "./Wallet";
 interface AnswerItem {
     id: number;
     name: string;
@@ -9,7 +9,7 @@ interface AnswerItem {
     tvl: number; // or string
     abi: string;
   }
-
+//TODO MOVE WALLET HERE
 async function getData() {
     const res = await fetch('http://localhost:3080', { cache: 'no-store' })
     // The return value is *not* serialized
@@ -35,20 +35,20 @@ export default async function Data(){
     }
     
     const listItems = answer.map((item: AnswerItem) =>(
-        <li key ={item.id}>
-            <div className="gridDashboard"> 
+            <div className="gridDashboard" >
             <div>{item.name} </div> 
             <div> {item.apy} </div> 
             <div> {item.available} </div>
             <div> {item.deposited} </div>
             <div> {item.tvl} </div>
             <div> {item.abi} </div>
+            <div><input type="number" required/> </div>
+            <div> insert Button</div>
             </div>
-        </li>
     ));
 
     return (
-        <ul className="list-style-type">{listItems}</ul>
+        <div>{listItems}<Wallet></Wallet></div>
     );
 }
 

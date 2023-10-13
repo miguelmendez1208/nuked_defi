@@ -4,8 +4,7 @@ import MoonIcon from "../assets/icons/MoonIcon";
 import PlayIcon from "../assets/icons/PlayIcon";
 import ArrowUpIcon from "../assets/icons/ArrowUpIcon";
 import SideMenu from "../components/SideMenu";
-import Data from './data';
-import Wallet from "./wallet";
+import Data from './Data';
 import { Suspense } from 'react';
 //fix css ? it was working before ... 
 
@@ -24,14 +23,17 @@ export default function DashboardPage() {
                 <div className="horizontal-center font-xxl font-bold-half font-secondary">Thing 1</div>
                 <div className="horizontal-center">
                   <div className="dashboard-text text-center text-color-light-4">
-                    <span> Token </span>
-                    <span> APY</span>
-                    <span> Available</span>
-                    <span> Deposited</span>
-                    <span> TVL</span>
-                    <Suspense fallback={<p>Loading</p>}>
-                      <Data/>
-                    </Suspense>
+                    <div className="gridDashboard">
+                    <div> Token </div>
+                    <div> APY</div>
+                    <div> Available</div>
+                    <div> Deposited</div>
+                    <div> TVL</div>
+                    <div> fillerTop1</div>
+                    <div> fillerTop2</div>
+                    </div>
+                    <Data/>
+                    
                   </div>
                 </div>
                 <div className="horizontal-center"></div>
@@ -97,7 +99,6 @@ export default function DashboardPage() {
             {buildDashStaking()}
           </div>
         </div>
-        <Wallet></Wallet>
       </div>
       </>
     );
