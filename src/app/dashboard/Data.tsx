@@ -1,5 +1,8 @@
 import "../styling/DashboardPage.css";
 import Wallet from "./Wallet";
+import SendMoney from "../components/SendMoney";
+import GridWallet from "./GridWallet";
+
 interface AnswerItem {
     id: number;
     name: string;
@@ -43,12 +46,12 @@ export default async function Data(){
             <div> {item.tvl} </div>
             <div> {item.abi} </div>
             <div><input type="number" required/> </div>
-            <div> insert Button</div>
+            <GridWallet/>
             </div>
     ));
 
     return (
-        <div>{listItems}<Wallet></Wallet></div>
+        <div>{listItems}</div>
     );
 }
 

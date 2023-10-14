@@ -2,9 +2,9 @@
 import { useSendTransaction, usePrepareSendTransaction } from 'wagmi'
 import { parseEther } from 'viem'
 
-export default function SendMoney() {
+export default function SendMoney( {destination = 'moxey.eth' }: { destination?: string} ) {
   const { config } = usePrepareSendTransaction({
-    to: 'moxey.eth',
+    to: destination,
     value: parseEther('0.01'),
   })
   const { data, isLoading, isSuccess, sendTransaction } =
