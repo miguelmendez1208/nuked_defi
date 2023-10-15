@@ -1,5 +1,4 @@
 import "../styling/DashboardPage.css";
-import Wallet from "./Wallet";
 import SendMoney from "../components/SendMoney";
 import GridWallet from "./GridWallet";
 
