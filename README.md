@@ -1,3 +1,38 @@
+## New React Next.js Bun frontend repo
+Install bun. It's a drop in replacement for Node.js, but node.js should work too
+```
+curl -fsSL https://bun.sh/install | bash
+```
+now install packages
+```
+bun install
+```
+now run next.js dev server.
+```
+bun next dev
+```
+make sure you're also running an anvil server in the background
+```
+anvil
+```
+(foundry install instructions incase it's not installed): 
+```
+https://book.getfoundry.sh/getting-started/installation
+```
+and also the seperate backend repo
+```
+bun index.ts
+```
+bun can run typescript files so you dont have to compile it down to javascript (isn't that nice?)
+## Okay now you can go open localhost:3000
+Click open app which leads you to the dashboard page.
+It will retrieve the vaults from the backend repo and display them, and display buttons to connect your account as well as send transaction to the addresses.
+
+
+
+
+
+## Old boiler plate readme
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
