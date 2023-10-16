@@ -29,8 +29,8 @@ export default function DashboardPage() {
                     <div> Available</div>
                     <div> Deposited</div>
                     <div> TVL</div>
-                    <div> fillerTop1</div>
-                    <div> fillerTop2</div>
+                    <div> Amount</div>
+                    <div> filler</div>
                     </div>
                     <Data/>
                     

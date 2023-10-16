@@ -43,9 +43,7 @@ export default async function Data(){
             <div> {item.available} </div>
             <div> {item.deposited} </div>
             <div> {item.tvl} </div>
-            <div> {item.abi} </div>
-            <div><input type="number" required/> </div>
-            <GridWallet/>
+            <GridWallet propParameter={item.abi}/>
             </div>
     ));
 

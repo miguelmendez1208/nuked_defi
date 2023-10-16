@@ -9,7 +9,6 @@ const projectId = '76e490f32ea4fd8fc7071f1d3ed3cc6d'
 import { Anvil } from './Anvil'
 
 import ConnectButton from '../components/ConnectButton'
-import Account from '../components/Account'
 // 2. Create wagmiConfig
 const metadata = {
   name: 'Web3Modal',
@@ -23,14 +22,17 @@ const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 
 // 3. Create modal
 createWeb3Modal({ wagmiConfig, projectId, chains })
+
+interface SendMoneyProps{
+  propParameter: string;
+}
+
 //todo parameterize value xddddd idk why this take me so long lol
-export default function GridWallet() {
-  const value = "vitalik.eth"
+export default function GridWallet({propParameter="0xC92E8bdf79f0507f65a392b0ab4667716BFE0110"}: SendMoneyProps) {
   return (
     <WagmiConfig config={wagmiConfig}>
-        <SendMoney destination={value}/>
+        <SendMoney destination={propParameter}/>
         <ConnectButton></ConnectButton>
-        <Account></Account>
     </WagmiConfig>
   )
 }
