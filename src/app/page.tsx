@@ -11,7 +11,6 @@ import { useMediaQuery } from 'react-responsive';
 
 import Link from 'next/link'
 
-
 export default function Home() {
   const isMobile = useMediaQuery({ maxWidth: 900});
   
