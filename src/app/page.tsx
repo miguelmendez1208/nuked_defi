@@ -6,16 +6,19 @@ import './styling/App.css';
 import './styling/themes.css';
 import './styling/Toast.css';
 import SideMenu from './components/SideMenu';
-
+import SettingsModal from './components/SettingsModal';
 import { useMediaQuery } from 'react-responsive';
-
+import SettingsButton from './components/SettingsButton';
 import Link from 'next/link'
-
+import Header from './components/Header';
 export default function Home() {
   const isMobile = useMediaQuery({ maxWidth: 900});
   
   return (
   <>
+              <div className="header-right gap-common">
+              <Header />
+              </div>
   <div className="home display-flex">
   <div className={'home-container display-flex-row' + (isMobile ? ' mobile' : '')}>
     <div className="home-left display-flex-col">
@@ -32,6 +35,7 @@ export default function Home() {
       </div>
       <Link href ="/dashboard">Enter App </Link>
     </div>
+    <SettingsModal />
     <div className="home-right display-flex">
       <pre className="disable-highlight">
         {!isMobile

@@ -1,4 +1,4 @@
-import '../../styling/Modal.css';
+import "../styling/Modal.css"
 
 import XIcon from '../assets/icons/XIcon';
 

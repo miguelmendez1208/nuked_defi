@@ -1,23 +1,31 @@
-import { useContext } from 'react';
+import { useThemeDispatch } from '../theme-provider';
 import Button from './Button';
 import '../styling/Button.css';
 import CogIcon from '../assets/icons/CogIcon';
-import { ThemeContext } from '../theme-provider';
 
-interface ConnectWalletButtonProps {
+interface SettingsButtonProps {  // Renamed the interface to match the component name
   className?: string;
 }
 
-const SettingsButton = (props: ConnectWalletButtonProps) => {
-  const theme = useContext(ThemeContext);
+const SettingsButton = (props: SettingsButtonProps) => {
+  const dispatch = useThemeDispatch();
   const { className = '' } = props;
+
+  const toggleSettings = () => {
+    if (dispatch !== null) {
+      dispatch({ type: 'TOGGLE_SETTINGS' });
+    } else {
+      console.error('Dispatch context is null. Are you within a ThemeProvider?');
+    }
+  };
 
   return (
     <Button
+      onButtonClick={toggleSettings}
       className={'settings-button icon-button ' + className}
     >
       <div className="svg-icon svg-shadow w-100">
-      <CogIcon/>
+        <CogIcon />
       </div>
     </Button>
   );

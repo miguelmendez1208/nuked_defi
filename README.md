@@ -19,7 +19,7 @@ anvil
 ```
 https://book.getfoundry.sh/getting-started/installation
 ```
-and also the seperate backend repo
+and also the seperate backend repo 
 ```
 bun index.ts
 ```

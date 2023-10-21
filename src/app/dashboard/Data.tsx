@@ -43,6 +43,8 @@ export default async function Data(){
     //  server (dashboard/page.tsx) ->
     //  server (Data.tsx) ->
     //  client (GridWallet.tsx) 
+
+    //add a key in here somewhere? I forget
     const listItems = answer.map((item: AnswerItem) =>(
             <div className="gridDashboard" >
             <div>{item.name} </div> 

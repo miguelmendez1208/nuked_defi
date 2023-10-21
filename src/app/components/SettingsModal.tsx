@@ -1,41 +1,49 @@
+'use client'
 import { useContext } from 'react';
-import { Context } from '../../Store';
-import Button from './../Button';
+
+import { useTheme, useThemeDispatch} from "../theme-provider";
+import Button from './Button';
 import Modal from './Modal';
 import {
   saveTheme,
   saveHamburgerMenuPosition,
   saveAutoBrowserWallet,
-} from '../../functions/browser';
+} from "../Landfill/browser";
 
 interface SettingsModalProps {
   className?: string;
 }
-
+//lets try to parameterize this 
 const SettingsModal = (props: SettingsModalProps) => {
-  const [state, dispatch]: any = useContext(Context);
+
   const { className = '' } = props;
+  const state = useTheme();
+  const dispatch = useThemeDispatch();
 
   const setTheme = (theme: string) => {
-    dispatch({ type: 'theme', content: theme });
-    saveTheme(theme);
+    if (dispatch !== null && state !== null) {
+      dispatch({ type: 'CHANGE_THEME', payload: theme });
+      saveTheme(theme);
+    } else {
+      console.error('Dispatch or State context is null. Are you within a ThemeProvider?');
+    }
   };
-  const setMenuPosition = (position: string) => {
-    dispatch({ type: 'hamburgerMenuPosition', content: position });
-    saveHamburgerMenuPosition(position);
-  };
-  const setAutoBrowserWallet = (setting: boolean) => {
-    dispatch({ type: 'autoBrowserWallet', content: setting });
-    saveAutoBrowserWallet(setting);
+  //ugly method name
+  const setClose = (open: boolean) => {
+    if (dispatch !== null) {
+      dispatch({ type: 'TOGGLE_SETTINGS' });  // This action type toggles the value of isSettingsOpen
+    } else {
+      console.error('Dispatch context is null. Are you within a ThemeProvider?');
+    }
   };
 
   return (
     <>
-      {state.isSettingsOpen ? (
+      {!state?.isSettingsOpen ? (
         <Modal
           title="Settings"
           handleClose={() => {
-            dispatch({ type: 'isSettingsOpen', content: false });
+            setClose(false);
           }}
           className={className}
           classNameBody="padding-full"
@@ -47,7 +55,7 @@ const SettingsModal = (props: SettingsModalProps) => {
               onButtonClick={() => {
                 setTheme('beach');
               }}
-              selected={state.theme === 'beach'}
+              selected={state?.theme === 'beach'}
               className="margin-right margin-bottom theme-button"
             />
             <Button
@@ -55,7 +63,7 @@ const SettingsModal = (props: SettingsModalProps) => {
               onButtonClick={() => {
                 setTheme('ink');
               }}
-              selected={state.theme === 'ink'}
+              selected={state?.theme === 'ink'}
               className="margin-right margin-bottom theme-button"
             />
             <Button
@@ -63,7 +71,7 @@ const SettingsModal = (props: SettingsModalProps) => {
               onButtonClick={() => {
                 setTheme('mint');
               }}
-              selected={state.theme === 'mint'}
+              selected={state?.theme === 'mint'}
               className="margin-right margin-bottom theme-button"
             />
           </div>
@@ -73,7 +81,7 @@ const SettingsModal = (props: SettingsModalProps) => {
               onButtonClick={() => {
                 setTheme('tokyo');
               }}
-              selected={state.theme === 'tokyo'}
+              selected={state?.theme  === 'tokyo'}
               className="margin-right margin-bottom theme-button"
             />
             <Button
@@ -81,61 +89,11 @@ const SettingsModal = (props: SettingsModalProps) => {
               onButtonClick={() => {
                 setTheme('bios');
               }}
-              selected={state.theme === 'bios'}
+              selected={state?.theme === 'bios'}
               className="theme-button margin-bottom"
             />
           </div>
-          <div className="margin-bottom padding-top">Hamburger Menu Position (Mobile Only)</div>
-          <div className="display-flex flex-flow-row-wrap">
-            <Button
-              text="Left"
-              onButtonClick={() => {
-                setMenuPosition('left');
-              }}
-              selected={state.hamburgerMenuPosition === 'left'}
-              className={
-                'margin-right theme-button border-full border-color-light ' +
-                (state.hamburgerMenuPosition === 'left' ? ' inverted-palette-box' : '')
-              }
-            />
-            <Button
-              text="Right"
-              onButtonClick={() => {
-                setMenuPosition('right');
-              }}
-              selected={state.hamburgerMenuPosition === 'right'}
-              className={
-                'margin-right theme-button border-full border-color-light ' +
-                (state.hamburgerMenuPosition === 'right' ? ' inverted-palette-box' : '')
-              }
-            />
-          </div>
-          <div className="margin-bottom padding-top">Automatically Connect Browser Wallet</div>
-          <div className="display-flex flex-flow-row-wrap">
-            <Button
-              text="Off"
-              onButtonClick={() => {
-                setAutoBrowserWallet(false);
-              }}
-              selected={!state.autoBrowserWallet}
-              className={
-                'margin-right theme-button border-full border-color-light ' +
-                (!state.autoBrowserWallet ? ' inverted-palette-box' : '')
-              }
-            />
-            <Button
-              text="On"
-              onButtonClick={() => {
-                setAutoBrowserWallet(true);
-              }}
-              selected={state.autoBrowserWallet}
-              className={
-                'margin-right theme-button border-full border-color-light ' +
-                (state.autoBrowserWallet ? ' inverted-palette-box' : '')
-              }
-            />
-          </div>
-        </Modal>
+          </Modal>
       ) : (
         <></>
       )}

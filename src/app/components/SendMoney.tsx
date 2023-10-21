@@ -17,7 +17,7 @@ export default function SendMoney({ destination = "0xC92E8bdf79f0507f65a392b0ab4
 
   const { data, isLoading, isSuccess, sendTransaction } = useSendTransaction(config);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: any) => {
     setTransactionValue(e.target.value);
   };
 
