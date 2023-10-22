@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/jest": "^29.5.5",
     "@web3modal/wagmi": "^3.0.1",
     "bignumber.js": "^9.1.2",
     "next": "latest",
