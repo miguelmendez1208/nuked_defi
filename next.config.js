@@ -3,6 +3,7 @@
 
 //module.exports = nextConfig
 
+//TODO: change this for secure content policy CSP? 
 module.exports = {
     images: {
       dangerouslyAllowSVG: true,

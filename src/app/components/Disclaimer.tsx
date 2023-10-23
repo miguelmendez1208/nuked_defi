@@ -1,16 +1,29 @@
+import { safeDiv } from '../Landfill/safeMath';
+import { useTheme, useThemeDispatch } from '../theme-provider';
 
+import Button from './Button';
 
 import '../styling/Disclaimer.css';
 
 interface DisclaimerProps {
-  invisible: boolean;
   readMode?: boolean;
   className?: string;
 }
 
 function Disclaimer(props: DisclaimerProps) {
 
-  return(
+  const state = useTheme();
+  const dispatch = useThemeDispatch();
+
+  const setDisclaimer = (open: boolean) => {
+    if (dispatch !== null){ 
+      dispatch({ type: "SHOW_DISCLAIMER" });
+    } else {
+      console.error("Dispatch context is null. Are you within theme provider?");
+    }
+  }
+
+  return state?.showDisclaimer || props.readMode ? (
     <div
       className={
         (props.readMode ? '' : 'disclaimer ') +
@@ -36,9 +49,23 @@ function Disclaimer(props: DisclaimerProps) {
             </span>
           </div>
         </div>
+        {!props.readMode && (
+          <Button
+            onButtonClick={() => {
+              const nowInSeconds = safeDiv(Date.now().toString(), '1000');
+              localStorage.setItem('termsAgreedTimestamp', nowInSeconds);
+              setDisclaimer(false);
+            }}
+            className={'disclaimer-button border-full border-color-light'}
+          >
+            I Have Read & I Agree
+          </Button>
+        )}
       </div>
     </div>
-    );
+  ) : (
+    <></>
+  );
 }
 
 export default Disclaimer;

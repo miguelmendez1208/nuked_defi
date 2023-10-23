@@ -1,6 +1,5 @@
 "use client"
 import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
-
 import { WagmiConfig } from 'wagmi'
 import { arbitrum, mainnet, goerli } from 'wagmi/chains'
 import SendMoney from '../components/SendMoney'
@@ -23,16 +22,18 @@ const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 // 3. Create modal
 createWeb3Modal({ wagmiConfig, projectId, chains })
 
-interface SendMoneyProps{
+interface SendMoneyProps {
   propParameter: string;
 }
 
-//todo parameterize value xddddd idk why this take me so long lol
-export default function GridWallet({propParameter="0xC92E8bdf79f0507f65a392b0ab4667716BFE0110"}: SendMoneyProps) {
+//this probably should be put somewhere else. This is using react context.
+//so you probably dont need to pass the prop parameter around
+
+export default function GridWallet({ propParameter = "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110" }: SendMoneyProps) {
   return (
     <WagmiConfig config={wagmiConfig}>
-        <SendMoney destination={propParameter}/>
-        <ConnectButton></ConnectButton>
+      <SendMoney destination={propParameter} />
+      <ConnectButton></ConnectButton>
     </WagmiConfig>
   )
 }

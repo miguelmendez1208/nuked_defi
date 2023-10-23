@@ -1,6 +1,4 @@
 "use client";
-import Image from 'next/image'
-import styles from './page.module.css'
 import './globals.css'
 import './styling/App.css';
 import './styling/themes.css';
@@ -11,35 +9,56 @@ import { useMediaQuery } from 'react-responsive';
 import SettingsButton from './components/SettingsButton';
 import Link from 'next/link'
 import Header from './components/Header';
+import { retrieveTermsAgreedTimestamp } from './Landfill/browser';
+import Disclaimer from './components/Disclaimer';
+
+
+//TODO insert GUARD CLAUSE to check last agreed and then pass the state variable to that function
+//so that it can automatically update the state without having to worry about making a context variable
+
+
 export default function Home() {
-  const isMobile = useMediaQuery({ maxWidth: 900});
-  
+  const isMobile = useMediaQuery({ maxWidth: 900 });
+  const lastAgreed = retrieveTermsAgreedTimestamp();
+
   return (
-  <>
-              <div className="header-right gap-common">
-              <Header />
-              </div>
-  <div className="home display-flex">
-  <div className={'home-container display-flex-row' + (isMobile ? ' mobile' : '')}>
-    <div className="home-left display-flex-col">
-      <h1 className="margin-bottom font-secondary">Title Goes Here</h1>
-      <div className="body padding-full padding-top-half">
-      <p className="padding-top padding-bottom">  
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        ex ercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
+    <>
+    <Disclaimer />
+    <div className="app-content">
+      <div className="header-right gap-common">
+        <Header />
       </div>
-      <Link href ="/dashboard">Enter App </Link>
-    </div>
-    <SettingsModal />
-    <div className="home-right display-flex">
-      <pre className="disable-highlight">
-        {!isMobile
-          ? `....................................................................................................
+
+      <div
+        className={
+          'body-and-footer-container ' +
+          'display-flex-row flex-grow-1' +
+          (isMobile ? ' mobile' : '')
+        }
+      >
+        <SideMenu />
+        <div className="display-flex-col flex-grow-1">
+          <div className="home display-flex">
+            <div className={'home-container display-flex-row' + (isMobile ? ' mobile' : '')}>
+              <div className="home-left display-flex-col">
+                <h1 className="margin-bottom font-secondary">Title Goes Here</h1>
+                <div className="body padding-full padding-top-half">
+                  <p className="padding-top padding-bottom">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    ex ercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                    mollit anim id est laborum.
+                  </p>
+                </div>
+                <Link href="/dashboard">Enter App </Link>
+              </div>
+              <SettingsModal />
+              <div className="home-right display-flex">
+                <pre className="disable-highlight">
+                  {!isMobile
+                    ? `....................................................................................................
 ....................................................................................................
 ....................................................................................................
 ....................................................................................................
@@ -71,7 +90,7 @@ export default function Home() {
 ((/(((((((#(((#((((/((((((((((((((((((((((((((((/(/((((/(//(((((/((((((((((/(///(((//((((////(//(///
 ((/(/((((((/((((//(((((///(((((/(((/(((((((((((((((((((((((#(((//((((((((((((((((((((/((((/(/(/((((/
 ((((///((//((//(/(/((/(//(//(((///////(((((((/((/(((((((/((/(/((//(((/(/(((((///(((((((((/((/(*(////`
-          : `............................................................
+                    : `............................................................
 ............................................................
 ............................................................
 .........(..,.&%.... .......................................
@@ -90,10 +109,13 @@ export default function Home() {
 #%%&%&&&&&&&&&&&&&&&&&&&&&&&%%,...,%%%&&&%%%&&&&&&&&&%%%%%%%
 (/(((((((((((/((/((((//(/(/(//(/((((/(((%/(((((((/(((((((///
 /((((///(((((((((/((((/((((((((((((((((((((((/((((((/((/(((/`}
-      </pre>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-</>
-);
+    </>
+  );
 }
