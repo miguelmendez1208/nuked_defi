@@ -11,19 +11,24 @@ import Link from 'next/link'
 import Header from './components/Header';
 import { retrieveTermsAgreedTimestamp } from './Landfill/browser';
 import Disclaimer from './components/Disclaimer';
-
+import { useTheme } from './theme-provider';
 
 //TODO insert GUARD CLAUSE to check last agreed and then pass the state variable to that function
 //so that it can automatically update the state without having to worry about making a context variable
 
-
 export default function Home() {
   const isMobile = useMediaQuery({ maxWidth: 900 });
   const lastAgreed = retrieveTermsAgreedTimestamp();
+  const state = useTheme();
+
+  //todo we should use ReactUseSync to retrieveTermsAgreedTimestamp here rather than coupling context together
+  //I do like that this guardclause works tho
+  if(state?.showDisclaimer){
+    return ( <Disclaimer></Disclaimer>);
+  }
 
   return (
     <>
-    <Disclaimer />
     <div className="app-content">
       <div className="header-right gap-common">
         <Header />

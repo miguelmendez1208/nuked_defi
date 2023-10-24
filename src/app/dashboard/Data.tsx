@@ -1,6 +1,7 @@
 import "../styling/DashboardPage.css";
 import GridWallet from "./GridWallet";
-
+import SendMoney from "../components/SendMoney";
+import ConnectButton from "../components/ConnectButton";
 interface AnswerItem {
     id: number;
     name: string;
@@ -45,13 +46,14 @@ export default async function Data() {
 
     //add a key in here somewhere? I forget
     const listItems = answer.map((item: AnswerItem) => (
-        <div className="gridDashboard" >
+        <div className="gridDashboard" key= {item.id}>
             <div>{item.name} </div>
             <div> {item.apy} </div>
             <div> {item.available} </div>
             <div> {item.deposited} </div>
             <div> {item.tvl} </div>
-            <GridWallet propParameter={item.abi} />
+            <SendMoney destination={item.abi} />
+            <ConnectButton/>
         </div>
     ));
 

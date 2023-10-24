@@ -1,5 +1,6 @@
 import { useSignMessage } from 'wagmi'
 
+//small not important function
 export default function Account() {
   const { data, isError, isLoading, isSuccess, signMessage } = useSignMessage({
     message: 'gm wagmi frens'

@@ -1,7 +1,5 @@
 const ExampleLogo = () => {
     return (
-
-
 <svg
    viewBox="0 0 120 72"
    version="1.1"
@@ -11,7 +9,7 @@ const ExampleLogo = () => {
      id="defs2" />
   <g
      id="layer1"
-     style={{display:"none"}}>
+     >
     <g
        id="g605">
       <path

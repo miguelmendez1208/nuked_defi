@@ -7,14 +7,16 @@ import AppLogo from '../assets/ExampleLogo';  // Adjusted import for SVG as a co
 import SettingsButton from './SettingsButton';
 import { useMediaQuery } from 'react-responsive';
 
+
 interface HeaderProps {
   className?: string;
 }
 //maybe client function?
 function Header(props: HeaderProps) {
-
   const isMobile = useMediaQuery({ maxWidth: 900 });
   const { className = '' } = props;
+
+ 
 
   return (
     <div
@@ -26,10 +28,10 @@ function Header(props: HeaderProps) {
       }
     >
       <div className="header-container display-flex-center">
-        {isMobile ? (
+        {!isMobile ? (
           <div className="header-left h-100">
             <div className="header-logo-container w-100" key={'header-route-button'}>
-              <Link href="/">  {/* Used Link from next/link for navigation */}
+              <Link href="/"> 
                 <div className="app-logo fill-svg-primary h-100">
                   <AppLogo />
                 </div>
@@ -47,18 +49,18 @@ function Header(props: HeaderProps) {
         {isMobile && (
           <div className="header-center w-100">
             <div className="header-center-positioning">
-              <div className="display-flex-row display-flex-align-start w-100 gap-common horizontal-center"></div>
+            <div className="display-flex-row display-flex-align-start w-100 gap-common horizontal-center"></div>
             </div>
           </div>
         )}
-        {isMobile ? (
+        {!isMobile ? (
           <>
             <div className="header-right gap-common">
               <SettingsButton />
             </div>
           </>
         ) : (
-          <SettingsButton />
+          <p> hamburger menu</p>
         )}
       </div>
     </div>

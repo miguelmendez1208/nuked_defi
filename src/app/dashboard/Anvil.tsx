@@ -1,5 +1,5 @@
 import { Chain } from 'wagmi'
-//please work man
+//this might be moved elsewhere
 export const Anvil = {
   id: 31337,
   name: 'Localhost',

@@ -3,7 +3,7 @@
 import "./styling/App.css"
 
 import { createContext, useContext, useReducer } from 'react'
-
+import GridWallet from "./Wallet-provider";
 
 //wacky name but oh well
 const initialTheme = {
@@ -39,7 +39,9 @@ export default function ThemeProvider({ children }: any) {
     <ThemeContext.Provider value={state}>
       <ThemeDispatchContext.Provider value={dispatch}>
         <div data-theme={state.theme} className="App">
+          <GridWallet>
           {children}
+          </GridWallet>
         </div>
       </ThemeDispatchContext.Provider>
     </ThemeContext.Provider>

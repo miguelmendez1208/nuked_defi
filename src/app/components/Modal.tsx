@@ -2,12 +2,6 @@ import "../styling/Modal.css"
 
 import XIcon from '../assets/icons/XIcon';
 
-// I dont love this file
-// I'd rather just manualy implement this where needed
-// Rather than have an abstraction im unfamiliar with but like
-// Complaining feels like semantics so this mostly just Acts as reference ? 
-// Eh maybe its fine
-
 interface ModalProps {
   handleClose: () => void;
   children?: any;

@@ -28,3 +28,8 @@ export function retrieveAutoBrowserWallet() {
 export function retrieveTermsAgreedTimestamp() {
   return localStorage.getItem('termsAgreedTimestamp');
 }
+
+//simple boolean function for now.
+export function setTermsAgreedTimestamp(agreed: boolean) {
+  localStorage.setItem("termsAgreedTimeStamp", agreed.toString());
+}
