@@ -9,7 +9,8 @@ function Footer() {
   const discordUrl = 'https://discord.com/';
   const twitterUrl = 'https://twitter.com/';
   const docsUrl = 'https://github.com/';
-
+  //TODO:
+  //change to next link IMPORTANT
   return (
     <>
       <div className="footer padding-full">

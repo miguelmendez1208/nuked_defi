@@ -36,6 +36,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## TODO
 Change naming conventions? probably check the exporting and importing of functions. It's """Best practice""" to have consistent naming convention but does it really matter? busy work.
 
+THE MISSING CSS IS IN NAVLINK AHHHHHH
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

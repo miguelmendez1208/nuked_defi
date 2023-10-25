@@ -1,9 +1,8 @@
 'use client'
 
 import "./styling/App.css"
-
+import "./styling/Body.css"
 import { createContext, useContext, useReducer } from 'react'
-import GridWallet from "./Wallet-provider";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SideMenu from "./components/SideMenu";
@@ -52,7 +51,9 @@ export default function ThemeProvider({ children }: any) {
           >
             <SideMenu />
             <div className="display-flex-col flex-grow-1">
+              <div className = "body padding-full padding-top-half">
               {children}
+              </div>
             </div>
           </div>
           <Footer />
