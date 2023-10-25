@@ -1,5 +1,4 @@
 import "../styling/DashboardPage.css";
-import GridWallet from "./GridWallet";
 import SendMoney from "../components/SendMoney";
 import ConnectButton from "../components/ConnectButton";
 interface AnswerItem {
@@ -32,21 +31,15 @@ export default async function Data() {
     const answer = await getData();
     console.log(answer);
     //handle errors w/ guard clause
-    if (answer == "error") {
+    if (answer === "error") {
         return (
             <div>Error</div>
         )
     }
-    //  if grid wallet is just a React Context provider... then maybe we should move this elsewhere? or maybe its fine. 
-    //  component hierarchy is going 
-    //  client (layout) -> 
-    //  server (dashboard/page.tsx) ->
-    //  server (Data.tsx) ->
-    //  client (GridWallet.tsx) 
 
     //add a key in here somewhere? I forget
     const listItems = answer.map((item: AnswerItem) => (
-        <div className="gridDashboard" key= {item.id}>
+        <div className="gridDashboard" key={item.id}>
             <div>{item.name} </div>
             <div> {item.apy} </div>
             <div> {item.available} </div>

@@ -6,6 +6,8 @@ import AppLogo from '../assets/ExampleLogo';  // Adjusted import for SVG as a co
 
 import SettingsButton from './SettingsButton';
 import { useMediaQuery } from 'react-responsive';
+import HamburgerMenu from './HamburgerMenu';
+import ConnectButton from './ConnectButton';
 
 
 interface HeaderProps {
@@ -57,10 +59,12 @@ function Header(props: HeaderProps) {
           <>
             <div className="header-right gap-common">
               <SettingsButton />
+              <div className="align-self-center">
+              <ConnectButton></ConnectButton></div>
             </div>
           </>
         ) : (
-          <p> hamburger menu</p>
+          <HamburgerMenu></HamburgerMenu>
         )}
       </div>
     </div>

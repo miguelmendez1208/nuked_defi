@@ -3,16 +3,12 @@ import './globals.css'
 import './styling/App.css';
 import './styling/themes.css';
 import './styling/Toast.css';
-import SideMenu from './components/SideMenu';
-import SettingsModal from './components/SettingsModal';
 import { useMediaQuery } from 'react-responsive';
-import SettingsButton from './components/SettingsButton';
 import Link from 'next/link'
-import Header from './components/Header';
 import { retrieveTermsAgreedTimestamp } from './Landfill/browser';
 import Disclaimer from './components/Disclaimer';
 import { useTheme } from './theme-provider';
-
+import Button from './components/Button';
 //TODO insert GUARD CLAUSE to check last agreed and then pass the state variable to that function
 //so that it can automatically update the state without having to worry about making a context variable
 
@@ -23,47 +19,32 @@ export default function Home() {
 
   //todo we should use ReactUseSync to retrieveTermsAgreedTimestamp here rather than coupling context together
   //I do like that this guardclause works tho
-  if(state?.showDisclaimer){
-    return ( <Disclaimer></Disclaimer>);
+  if (state?.showDisclaimer) {
+    return (<Disclaimer></Disclaimer>);
   }
 
   return (
     <>
-    <div className="app-content">
-      <div className="header-right gap-common">
-        <Header />
-      </div>
-
-      <div
-        className={
-          'body-and-footer-container ' +
-          'display-flex-row flex-grow-1' +
-          (isMobile ? ' mobile' : '')
-        }
-      >
-        <SideMenu />
-        <div className="display-flex-col flex-grow-1">
-          <div className="home display-flex">
-            <div className={'home-container display-flex-row' + (isMobile ? ' mobile' : '')}>
-              <div className="home-left display-flex-col">
-                <h1 className="margin-bottom font-secondary">Title Goes Here</h1>
-                <div className="body padding-full padding-top-half">
-                  <p className="padding-top padding-bottom">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    ex ercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                    mollit anim id est laborum.
-                  </p>
-                </div>
-                <Link href="/dashboard">Enter App </Link>
-              </div>
-              <SettingsModal />
-              <div className="home-right display-flex">
-                <pre className="disable-highlight">
-                  {!isMobile
-                    ? `....................................................................................................
+      <div className="home display-flex">
+        <div className={'home-container display-flex-row' + (isMobile ? ' mobile' : '')}>
+          <div className="home-left display-flex-col">
+            <h1 className="margin-bottom font-secondary">Title Goes Here</h1>
+            <div className="body padding-full padding-top-half">
+              <p className="padding-top padding-bottom">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                ex ercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum.
+              </p>
+            </div>
+            <Link href="/dashboard"><Button text="Enter App" className="home-enter-button"></Button></Link>
+          </div>
+          <div className="home-right display-flex">
+            <pre className="disable-highlight">
+              {!isMobile
+                ? `....................................................................................................
 ....................................................................................................
 ....................................................................................................
 ....................................................................................................
@@ -95,7 +76,7 @@ export default function Home() {
 ((/(((((((#(((#((((/((((((((((((((((((((((((((((/(/((((/(//(((((/((((((((((/(///(((//((((////(//(///
 ((/(/((((((/((((//(((((///(((((/(((/(((((((((((((((((((((((#(((//((((((((((((((((((((/((((/(/(/((((/
 ((((///((//((//(/(/((/(//(//(((///////(((((((/((/(((((((/((/(/((//(((/(/(((((///(((((((((/((/(*(////`
-                    : `............................................................
+                : `............................................................
 ............................................................
 ............................................................
 .........(..,.&%.... .......................................
@@ -114,13 +95,10 @@ export default function Home() {
 #%%&%&&&&&&&&&&&&&&&&&&&&&&&%%,...,%%%&&&%%%&&&&&&&&&%%%%%%%
 (/(((((((((((/((/((((//(/(/(//(/((((/(((%/(((((((/(((((((///
 /((((///(((((((((/((((/((((((((((((((((((((((/((((((/((/(((/`}
-                </pre>
-              </div>
-            </div>
+            </pre>
           </div>
         </div>
       </div>
-    </div>
     </>
   );
 }

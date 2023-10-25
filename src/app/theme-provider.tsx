@@ -4,6 +4,10 @@ import "./styling/App.css"
 
 import { createContext, useContext, useReducer } from 'react'
 import GridWallet from "./Wallet-provider";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import SideMenu from "./components/SideMenu";
+import SettingsModal from "./components/SettingsModal";
 
 //wacky name but oh well
 const initialTheme = {
@@ -31,7 +35,7 @@ const ThemeContext = createContext<ThemeState | null>(null);
 const ThemeDispatchContext = createContext<React.Dispatch<ThemeAction> | null>(null);
 
 
-
+//maybe I should put useMobile here? 
 export default function ThemeProvider({ children }: any) {
   const [state, dispatch] = useReducer(themeReducer, initialTheme);
   //this should be limited to only have context info no div class info
@@ -39,9 +43,20 @@ export default function ThemeProvider({ children }: any) {
     <ThemeContext.Provider value={state}>
       <ThemeDispatchContext.Provider value={dispatch}>
         <div data-theme={state.theme} className="App">
-          <GridWallet>
-          {children}
-          </GridWallet>
+          <Header />
+          <div
+            className={
+              'body-and-footer-container ' +
+              'display-flex-row flex-grow-1'
+            }
+          >
+            <SideMenu />
+            <div className="display-flex-col flex-grow-1">
+              {children}
+            </div>
+          </div>
+          <Footer />
+          <SettingsModal />
         </div>
       </ThemeDispatchContext.Provider>
     </ThemeContext.Provider>
