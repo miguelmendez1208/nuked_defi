@@ -14,7 +14,7 @@ interface AnswerItem {
 async function getData() {
     //get rid of the cache to make loads faster. 
     //but this proves that it does get it from the server.
-    const res = await fetch('http://localhost:3080', { cache: 'no-store' })
+    const res = await fetch('http://localhost:3080', { next: { revalidate: 500 } })
     // The return value is *not* serialized
     // You can return Date, Map, Set, etc.
 

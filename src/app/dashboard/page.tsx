@@ -3,12 +3,7 @@ import "../styling/DashboardPage.css";
 import MoonIcon from "../assets/icons/MoonIcon";
 import PlayIcon from "../assets/icons/PlayIcon";
 import ArrowUpIcon from "../assets/icons/ArrowUpIcon";
-import SideMenu from "../components/SideMenu";
 import Data from './Data';
-import { Suspense } from 'react';
-
-
-//maybe sidemenu and such should be moved to layout...
 
 export default function DashboardPage() {
 

@@ -6,7 +6,7 @@ import { arbitrum, mainnet, goerli } from 'wagmi/chains'
 const projectId = '76e490f32ea4fd8fc7071f1d3ed3cc6d'
 import { Anvil } from './dashboard/Anvil'
 import ThemeProvider from './theme-provider'
-
+import { Arbitrum_Anvil } from './dashboard/Arbitrum_Anvil'
 // 2. Create wagmiConfig
 const metadata = {
     name: 'Web3Modal',
@@ -15,7 +15,7 @@ const metadata = {
     icons: ['https://avatars.githubusercontent.com/u/37784886']
 }
 //yeah this should definitely be in layhout
-const chains = [mainnet, arbitrum, goerli, Anvil]
+const chains = [mainnet, arbitrum, goerli, Anvil, Arbitrum_Anvil]
 const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 
 // 3. Create modal
