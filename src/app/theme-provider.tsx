@@ -34,6 +34,16 @@ const ThemeContext = createContext<ThemeState | null>(null);
 const ThemeDispatchContext = createContext<React.Dispatch<ThemeAction> | null>(null);
 
 
+//Need to add a custom layout to other pages so that way you can conditionally render sidemenu
+//on homepage you dont want side menu but on other pages you do.
+//how ima do that idk
+//maybe have sidemenu hook into the page location?
+//but that seems ugly
+//could create two different layouts
+//our put a variable in 
+
+//WHERE THE FUCK IS DISCLAIMER?
+
 //maybe I should put useMobile here? 
 export default function ThemeProvider({ children }: any) {
   const [state, dispatch] = useReducer(themeReducer, initialTheme);
@@ -42,22 +52,24 @@ export default function ThemeProvider({ children }: any) {
     <ThemeContext.Provider value={state}>
       <ThemeDispatchContext.Provider value={dispatch}>
         <div data-theme={state.theme} className="App">
-          <Header />
-          <div
-            className={
-              'body-and-footer-container ' +
-              'display-flex-row flex-grow-1'
-            }
-          >
-            <SideMenu />
-            <div className="display-flex-col flex-grow-1">
-              <div className = "body padding-full padding-top-half">
-              {children}
+          <div className="app-content">
+            <Header />
+            <div
+              className={
+                'body-and-footer-container ' +
+                'display-flex-row flex-grow-1'
+              }
+            >
+              <SideMenu />
+              <div className="display-flex-col flex-grow-1">
+                <div className="body padding-full padding-top-half flex-grow-1">
+                  {children}
+                </div>
               </div>
             </div>
+            <Footer />
+            <SettingsModal />
           </div>
-          <Footer />
-          <SettingsModal />
         </div>
       </ThemeDispatchContext.Provider>
     </ThemeContext.Provider>

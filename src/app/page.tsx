@@ -1,8 +1,11 @@
 "use client";
+//theoretically we dont need these
 import './globals.css'
 import './styling/App.css';
 import './styling/themes.css';
 import './styling/Toast.css';
+
+import "./styling/Home.css"
 import { useMediaQuery } from 'react-responsive';
 import Link from 'next/link'
 import { retrieveTermsAgreedTimestamp } from './Landfill/browser';
@@ -22,6 +25,7 @@ export default function Home() {
   if (state?.showDisclaimer) {
     return (<Disclaimer></Disclaimer>);
   }
+  //wait is this the best place to put Disclaimer?
 
   return (
     <>

@@ -18,7 +18,7 @@ function Header(props: HeaderProps) {
   const isMobile = useMediaQuery({ maxWidth: 900 });
   const { className = '' } = props;
 
- 
+
 
   return (
     <div
@@ -33,7 +33,7 @@ function Header(props: HeaderProps) {
         {!isMobile ? (
           <div className="header-left h-100">
             <div className="header-logo-container w-100" key={'header-route-button'}>
-              <Link href="/"> 
+              <Link href="/">
                 <div className="app-logo fill-svg-primary h-100">
                   <AppLogo />
                 </div>
@@ -44,14 +44,14 @@ function Header(props: HeaderProps) {
         ) : (
           <div className="header-mobile-title-container w-100">
             <h3 className="header-mobile-title">
-              <p> I dont really know whats supposed to go here</p>
+              <p> INSERT LINKS HERE LATER </p>
             </h3>
           </div>
         )}
-        {isMobile && (
+        {!isMobile && (
           <div className="header-center w-100">
             <div className="header-center-positioning">
-            <div className="display-flex-row display-flex-align-start w-100 gap-common horizontal-center"></div>
+              <div className="display-flex-row display-flex-align-start w-100 gap-common horizontal-center"></div>
             </div>
           </div>
         )}
@@ -60,7 +60,7 @@ function Header(props: HeaderProps) {
             <div className="header-right gap-common">
               <SettingsButton />
               <div className="align-self-center">
-              <ConnectButton></ConnectButton></div>
+                <ConnectButton></ConnectButton></div>
             </div>
           </>
         ) : (

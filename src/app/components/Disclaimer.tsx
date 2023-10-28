@@ -14,7 +14,7 @@ function Disclaimer(props: DisclaimerProps) {
 
   const state = useTheme();
   const dispatch = useThemeDispatch();
-
+  //parameter could be gotten rid of
   const setDisclaimer = (open: boolean) => {
     if (dispatch !== null){ 
       dispatch({ type: "SHOW_DISCLAIMER" });
