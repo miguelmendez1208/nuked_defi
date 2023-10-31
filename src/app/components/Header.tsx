@@ -60,7 +60,8 @@ function Header(props: HeaderProps) {
             <div className="header-right gap-common">
               <SettingsButton />
               <div className="align-self-center">
-                <ConnectButton></ConnectButton></div>
+                <ConnectButton/>
+              </div>
             </div>
           </>
         ) : (

@@ -1,5 +1,5 @@
 "use client"
-import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
+import { createWeb3Modal, defaultWagmiConfig, useWeb3ModalTheme } from '@web3modal/wagmi/react'
 import { WagmiConfig } from 'wagmi'
 import { arbitrum, mainnet, goerli } from 'wagmi/chains'
 // 1. Get projectId
@@ -19,7 +19,13 @@ const chains = [mainnet, arbitrum, goerli, Anvil, Arbitrum_Anvil]
 const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 
 // 3. Create modal
-createWeb3Modal({ wagmiConfig, projectId, chains })
+createWeb3Modal({
+    wagmiConfig, projectId, chains, themeMode: 'light',
+    themeVariables: {
+        '--w3m-color-mix': '#00DCFF',
+        '--w3m-color-mix-strength': 20
+    }
+})
 
 export default function GridWallet({ children }: any) {
     return (
