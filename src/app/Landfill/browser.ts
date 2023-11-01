@@ -2,34 +2,34 @@ declare const window: any;
 const DEBUG_MODE = false;
 
 export function saveTheme(theme: string) {
-  localStorage.setItem('theme', theme);
+  window.localStorage.setItem('theme', theme);
 }
 
 export function retrieveTheme() {
-  return localStorage.getItem('theme');
+  return typeof window !== 'undefined' ? window.localStorage.getItem('theme') : null;
 }
 
 export function saveHamburgerMenuPosition(position: string) {
-  localStorage.setItem('hamburgerMenuPosition', position);
+  window.localStorage.setItem('hamburgerMenuPosition', position);
 }
 
 export function retrieveHamburgerMenuPosition() {
-  return localStorage.getItem('hamburgerMenuPosition');
+  return typeof window !== 'undefined' ? window.localStorage.getItem('hamburgerMenuPosition') : null;
 }
 
 export function saveAutoBrowserWallet(position: boolean) {
-  localStorage.setItem('autoBrowserWallet', position.toString());
+  window.localStorage.setItem('autoBrowserWallet', position.toString());
 }
 
 export function retrieveAutoBrowserWallet() {
-  return localStorage.getItem('autoBrowserWallet');
+  return typeof window !== 'undefined' ? window.localStorage.getItem('autoBrowserWallet') : null;
 }
 
 export function retrieveTermsAgreedTimestamp() {
-  return localStorage.getItem('termsAgreedTimestamp');
+  return typeof window !== 'undefined' ? window.localStorage.getItem('termsAgreedTimestamp') : null;
 }
 
 //simple boolean function for now.
 export function setTermsAgreedTimestamp(agreed: boolean) {
-  localStorage.setItem("termsAgreedTimeStamp", agreed.toString());
+  window.localStorage.setItem("termsAgreedTimeStamp", agreed.toString());
 }

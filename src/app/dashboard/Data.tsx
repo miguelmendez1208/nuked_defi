@@ -31,27 +31,26 @@ export default async function Data() {
     const answer = await getData();
     console.log(answer);
     //handle errors w/ guard clause
+    //does not work
     if (answer === "error") {
         return (
             <div>Error</div>
-        )
+        );
     }
-
-    //add a key in here somewhere? I forget
+    //this is such a ugly way to apply CSS to divs
     const listItems = answer.map((item: AnswerItem) => (
-        <div className="gridDashboard" key={item.id}>
-            <div>{item.name} </div>
-            <div> {item.apy} </div>
-            <div> {item.available} </div>
-            <div> {item.deposited} </div>
-            <div> {item.tvl} </div>
+        <div className="gridDashboard2" key={item.id}>
+            <div className="entry"> {item.name} </div>
+            <div className="entry"> {item.apy} </div>
+            <div className="entry"> {item.available} </div>
+            <div className="entry"> {item.deposited} </div>
+            <div className="entry"> {item.tvl} </div>
             <SendMoney destination={item.abi} />
-            <ConnectButton/>
         </div>
     ));
 
     return (
-        <div>{listItems}</div>
+        <>{listItems}</>
     );
 }
 

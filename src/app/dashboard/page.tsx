@@ -20,7 +20,7 @@ export default function DashboardPage() {
             <div className="horizontal-center font-xxl font-bold-half font-secondary">Thing 1</div>
             <div className="horizontal-center">
               <div className="dashboard-text text-center text-color-light-4">
-                
+
                 <div className="gridDashboard">
                   <div>Token</div>
                   <div>APY</div>
@@ -28,10 +28,9 @@ export default function DashboardPage() {
                   <div>Deposited</div>
                   <div>TVL</div>
                   <div>Amount</div>
-                  <div>filler</div>
+                  <div></div>
                 </div>
                 <Data />
-
               </div>
             </div>
             <div className="horizontal-center"></div>

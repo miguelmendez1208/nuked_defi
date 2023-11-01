@@ -17,12 +17,22 @@
 
 .gridDashboard {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
-  gap:30px;
-  padding:5px;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  gap:50px;
 }
 
 .gridDashboard > div {
-  text-align: center;
+  text-align: justify;
+  
+}
+
+.gridDashboard2 {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  gap:50px;
+}
+
+.gridDashboard2 > div {
+  text-align: justify;
   
 }
