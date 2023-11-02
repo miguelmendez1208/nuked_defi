@@ -14,7 +14,7 @@ const metadata = {
     url: 'https://web3modal.com',
     icons: ['https://avatars.githubusercontent.com/u/37784886']
 }
-//yeah this should definitely be in layhout
+//temporarily riding of mainnet arbitrum
 const chains = [mainnet, arbitrum, goerli, Anvil, Arbitrum_Anvil]
 const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 

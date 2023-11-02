@@ -2,8 +2,8 @@ import { Chain } from 'wagmi'
 //this might be moved elsewhere
 export const Arbitrum_Anvil = {
   id: 42161,
-  name: 'AnvilArbitrum',
-  network: 'arbitrum-mainnet',
+  name: 'Arbitrum_Anvil',
+  network: 'Arbitrum_anvil',
   nativeCurrency: {
     decimals: 18,
     name: 'Ethereum',

@@ -17,8 +17,9 @@
 
 .gridDashboard {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto;
-  gap:50px;
+  grid-template-columns: 5% 5% 5% 5% 5% 10% 10%;
+  gap:60px;
+  padding: 10px;
 }
 
 .gridDashboard > div {
@@ -28,8 +29,9 @@
 
 .gridDashboard2 {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto;
-  gap:50px;
+  grid-template-columns: 5% 5% 5% 5% 5% 10% 10%;
+  gap:60px;
+  padding: 5px;
 }
 
 .gridDashboard2 > div {

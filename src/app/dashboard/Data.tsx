@@ -1,6 +1,21 @@
 import "../styling/DashboardPage.css";
 import SendMoney from "../components/SendMoney";
-import ConnectButton from "../components/ConnectButton";
+import MintNFTForm from "../components/MintNFTForm";
+
+type ABIMethod = {
+    anonymous?: boolean;
+    constant?: boolean;
+    inputs?: { indexed?: boolean; internalType: string; name: string; type: string }[];
+    name: string;
+    outputs?: { internalType: string; name: string; type: string }[];
+    payable?: boolean;
+    stateMutability: string;
+    type: string;
+  };
+  
+  type ABI = ABIMethod[];
+  
+
 interface AnswerItem {
     id: number;
     name: string;
@@ -8,13 +23,14 @@ interface AnswerItem {
     available: number; // or string
     deposited: number; // or string
     tvl: number; // or string
-    abi: string;
+    address: `0x${string}`; //forcing it to be a proper address, seems kinda dumb
+    abi: ABI;
 }
 //TODO MOVE WALLET HERE
 async function getData() {
     //get rid of the cache to make loads faster. 
     //but this proves that it does get it from the server.
-    const res = await fetch('http://localhost:3080', { next: { revalidate: 500 } })
+    const res = await fetch('http://localhost:3080', { next: { revalidate: 50 } })
     // The return value is *not* serialized
     // You can return Date, Map, Set, etc.
 
@@ -29,7 +45,7 @@ async function getData() {
 
 export default async function Data() {
     const answer = await getData();
-    console.log(answer);
+    console.log(JSON.stringify(answer, null, 2));
     //handle errors w/ guard clause
     //does not work
     if (answer === "error") {
@@ -45,10 +61,12 @@ export default async function Data() {
             <div className="entry"> {item.available} </div>
             <div className="entry"> {item.deposited} </div>
             <div className="entry"> {item.tvl} </div>
-            <SendMoney destination={item.abi} />
+            <SendMoney destination={item.address} />
         </div>
     ));
+    //            <MintNFTForm address={item.address} abi={item.abi}/>
 
+    //            <SendMoney destination={item.abi} />
     return (
         <>{listItems}</>
     );
