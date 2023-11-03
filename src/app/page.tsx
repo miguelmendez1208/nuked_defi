@@ -25,7 +25,6 @@ export default function Home() {
   if (state?.showDisclaimer) {
     return (<Disclaimer></Disclaimer>);
   }
-  //wait is this the best place to put Disclaimer?
 
   return (
     <>

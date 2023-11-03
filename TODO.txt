@@ -1,0 +1,8 @@
+Nov 3
+We should move the Chain IDs to a seperate folder
+Maybe rename some of the files, ie like Make sure Capital letters and exporting correctly and such
+I kinda want to put like comments in the modals and such to describe the relationships between files
+ToDo definitely add back the classnames back into the SVGS, as well as establish default values
+Look into Content Security Policy
+Hmm that requires looking up the ESM conventions, 
+and also knowhing what ESM conventions the current version of Next.JS uses
