@@ -6,3 +6,15 @@ ToDo definitely add back the classnames back into the SVGS, as well as establish
 Look into Content Security Policy
 Hmm that requires looking up the ESM conventions, 
 and also knowhing what ESM conventions the current version of Next.JS uses
+
+were doing test with NFTS using IPFS this is a link: 
+https://ipfs.io/ipfs/QmQWfb3mSuqGDdaW7gPZktC77nynPzyovEQe7BTp4J3FLD/images/00.png
+
+its a squirrel. I love squirrels. squirrels are cool. :)
+minting for arbitrum nft u Need
+address: address
+uint256: CID 
+so for CID were gonna use like this or whatever
+https://ipfs.io/ipfs/QmQWfb3mSuqGDdaW7gPZktC77nynPzyovEQe7BTp4J3FLD/images/00.png
+
+OMG I DONT KNOW WHAT A CID IS. AHHHH. NEED TO RUN. WHAT AM I DOING ;_:

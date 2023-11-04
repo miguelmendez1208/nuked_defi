@@ -2,27 +2,32 @@
 
 import "./styling/App.css"
 import "./styling/Body.css"
-import { createContext, useContext, useReducer } from 'react'
+import { createContext, useContext, useReducer, useEffect } from 'react'
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import SideMenu from "./components/SideMenu";
 import SettingsModal from "./components/SettingsModal";
+import { useMediaQuery } from 'react-responsive';
 
 //wacky name but oh well
-const initialTheme = {
+const initialTheme: ThemeState = {
   theme: "beach",
   isSettingsOpen: false,
-  showDisclaimer: true
+  showDisclaimer: true,
+  isMobile: false,
+  hamburgerMenuPosition: "right",
 };
 
 interface ThemeState {
   theme: string;
   isSettingsOpen: boolean;
   showDisclaimer: boolean;
+  isMobile: boolean;
+  hamburgerMenuPosition: string;
 }
 
 interface ThemeAction {
-  type: 'CHANGE_THEME' | 'TOGGLE_SETTINGS' | 'SHOW_DISCLAIMER';
+  type: 'CHANGE_THEME' | 'TOGGLE_SETTINGS' | 'SHOW_DISCLAIMER' | 'TOGGLE_MOBILE' | 'SET_HAMBURGER_POSITION';
   payload?: any;
 }
 
@@ -46,7 +51,15 @@ const ThemeDispatchContext = createContext<React.Dispatch<ThemeAction> | null>(n
 
 //maybe I should put useMobile here? 
 export default function ThemeProvider({ children }: any) {
+
   const [state, dispatch] = useReducer(themeReducer, initialTheme);
+  // Use the useMediaQuery hook at the top level of your component
+  const isMobileQuery = useMediaQuery({ maxWidth: 900 });
+
+  // Use useEffect to update the state when the media query changes
+  useEffect(() => {
+    dispatch({ type: 'TOGGLE_MOBILE', payload: isMobileQuery });
+  }, [isMobileQuery]);
   //this should be limited to only have context info no div class info
   return (
     <ThemeContext.Provider value={state}>
@@ -102,6 +115,20 @@ function themeReducer(state: ThemeState, action: ThemeAction): ThemeState {
         ...state,
         showDisclaimer: !state.showDisclaimer,
       };
+    case 'TOGGLE_MOBILE':
+      return {
+        ...state,
+        isMobile: !state.isMobile,
+      };
+    case 'SET_HAMBURGER_POSITION':
+      if (typeof action.payload === 'string') {
+        return {
+          ...state,
+          hamburgerMenuPosition: action.payload,
+        };
+      }
+      return state;
+
     default:
       throw Error('Unknown action: ' + action.type);
   }

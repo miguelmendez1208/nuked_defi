@@ -5,12 +5,12 @@ import Link from 'next/link'
 
 import '../styling/SideMenu.css';
 
-import { useMediaQuery } from 'react-responsive';
 import { usePathname } from 'next/navigation'
+import { useTheme } from '../theme-provider';
 function SideMenu() {
   //parameterize later
-
-  const isMobile = useMediaQuery({ maxWidth: 900 });
+  const state = useTheme(); // Use the useTheme hook to get the theme state
+  const isMobile = state?.isMobile ?? false; // Use nullish coalescing to default to false if state is null
   const pathname = usePathname()
   //guardclause
   if (isMobile) {

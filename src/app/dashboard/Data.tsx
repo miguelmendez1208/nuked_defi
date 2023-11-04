@@ -1,4 +1,4 @@
-import "../styling/DashboardPage.css";
+//import "../styling/DashboardPage.css";
 import SendMoney from "../components/SendMoney";
 import MintNFTForm from "../components/MintNFTForm";
 
@@ -26,7 +26,6 @@ interface AnswerItem {
     address: `0x${string}`; //forcing it to be a proper address, seems kinda dumb
     abi: ABI;
 }
-//TODO MOVE WALLET HERE
 async function getData() {
     //get rid of the cache to make loads faster. 
     //but this proves that it does get it from the server.
@@ -65,7 +64,6 @@ export default async function Data() {
         </div>
     ));
     //            <MintNFTForm address={item.address} abi={item.abi}/>
-
     //            <SendMoney destination={item.abi} />
     return (
         <>{listItems}</>

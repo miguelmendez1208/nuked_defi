@@ -6,7 +6,6 @@ import './styling/themes.css';
 import './styling/Toast.css';
 
 import "./styling/Home.css"
-import { useMediaQuery } from 'react-responsive';
 import Link from 'next/link'
 import { retrieveTermsAgreedTimestamp } from './Landfill/browser';
 import Disclaimer from './components/Disclaimer';
@@ -16,10 +15,10 @@ import Button from './components/Button';
 //so that it can automatically update the state without having to worry about making a context variable
 
 export default function Home() {
-  const isMobile = useMediaQuery({ maxWidth: 900 });
+  
   const lastAgreed = retrieveTermsAgreedTimestamp();
   const state = useTheme();
-
+  const isMobile = state?.isMobile ?? false; //default to false
   //todo we should use ReactUseSync to retrieveTermsAgreedTimestamp here rather than coupling context together
   //I do like that this guardclause works tho
   if (state?.showDisclaimer) {

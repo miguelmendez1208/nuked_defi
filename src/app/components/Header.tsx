@@ -1,24 +1,22 @@
+//"use client"
+//This definitely should just be a client function, but why does it work? I should definitely just move all the themeing back
+//up to the theme-provider context
 import Link from 'next/link';  // Imported Link from next/link for navigation
-
 import '../styling/Header.css';
 import AppLogo from '../assets/ExampleLogo';  // Adjusted import for SVG as a component
-
-
 import SettingsButton from './SettingsButton';
-import { useMediaQuery } from 'react-responsive';
 import HamburgerMenu from './HamburgerMenu';
 import ConnectButton from './ConnectButton';
-
+import { useTheme } from '../theme-provider';
 
 interface HeaderProps {
   className?: string;
 }
 //maybe client function?
 function Header(props: HeaderProps) {
-  const isMobile = useMediaQuery({ maxWidth: 900 });
+  const state = useTheme(); // Use the useTheme hook to get the theme state
+  const isMobile = state?.isMobile ?? false; // Use nullish coalescing to default to false if state is null
   const { className = '' } = props;
-
-
 
   return (
     <div
