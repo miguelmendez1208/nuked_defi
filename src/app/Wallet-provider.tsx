@@ -4,9 +4,9 @@ import { WagmiConfig } from 'wagmi'
 import { arbitrum, mainnet, goerli } from 'wagmi/chains'
 // 1. Get projectId
 const projectId = '76e490f32ea4fd8fc7071f1d3ed3cc6d'
-import { Anvil } from './Landfill/Anvil'
+import { Anvil } from './functions/Anvil'
 import ThemeProvider from './theme-provider'
-import { Arbitrum_Anvil } from './Landfill/Arbitrum_Anvil'
+import { Arbitrum_Anvil } from './functions/Arbitrum_Anvil'
 // 2. Create wagmiConfig
 const metadata = {
     name: 'Web3Modal',

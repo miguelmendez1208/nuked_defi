@@ -1,14 +1,15 @@
 'use client'
-import { useContext } from 'react';
 
 import { useTheme, useThemeDispatch} from "../theme-provider";
 import Button from './Button';
 import Modal from './Modal';
+//todo reimplement saveHamburgerMenuPosition
+//todo reimplement saveAutoBrowserWallet
 import {
   saveTheme,
   saveHamburgerMenuPosition,
   saveAutoBrowserWallet,
-} from "../Landfill/browser";
+} from "../functions/browser";
 
 interface SettingsModalProps {
   className?: string;
@@ -36,10 +37,10 @@ const SettingsModal = (props: SettingsModalProps) => {
       console.error('Dispatch context is null. Are you within a ThemeProvider?');
     }
   };
-
+  //todo need to keep better track of boolean logic
   return (
     <>
-      {!state?.isSettingsOpen ? (
+      {state?.isSettingsOpen ? (
         <Modal
           title="Settings"
           handleClose={() => {

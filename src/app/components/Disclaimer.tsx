@@ -1,4 +1,4 @@
-import { safeDiv } from '../Landfill/safeMath';
+import { safeDiv } from '../functions/safeMath';
 import { useTheme, useThemeDispatch } from '../theme-provider';
 
 import Button from './Button';

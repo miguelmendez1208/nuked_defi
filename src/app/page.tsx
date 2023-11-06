@@ -7,7 +7,7 @@ import './styling/Toast.css';
 
 import "./styling/Home.css"
 import Link from 'next/link'
-import { retrieveTermsAgreedTimestamp } from './Landfill/browser';
+import { retrieveTermsAgreedTimestamp } from './functions/browser';
 import Disclaimer from './components/Disclaimer';
 import { useTheme } from './theme-provider';
 import Button from './components/Button';

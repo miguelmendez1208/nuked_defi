@@ -1,6 +1,12 @@
 "use client"
 
-import "./styling/App.css"
+import './globals.css'
+import './styling/App.css';
+import './styling/themes.css';
+import './styling/Toast.css';
+
+import "./styling/Home.css"
+
 import "./styling/Body.css"
 import { createContext, useContext, useReducer, useEffect } from 'react'
 import Header from "./components/Header";

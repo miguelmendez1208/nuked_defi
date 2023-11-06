@@ -6,7 +6,7 @@ import WalletIcon from '../assets/icons/WalletIcon';
 export default function ConnectButton() {
   // 4. Use modal hook
   const modal = useWeb3Modal();
-  //you have to open it first lol
+  
   const state = useWeb3ModalState();
 
   return (
