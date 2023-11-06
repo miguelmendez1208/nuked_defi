@@ -4,7 +4,7 @@ import MoonIcon from "../assets/icons/MoonIcon";
 import PlayIcon from "../assets/icons/PlayIcon";
 import ArrowUpIcon from "../assets/icons/ArrowUpIcon";
 import Data from './Data';
-
+import { Suspense } from "react";
 export default function DashboardPage() {
 
   const buildDashPositions = () => {
@@ -29,8 +29,12 @@ export default function DashboardPage() {
                   <div>TVL</div>
                   <div>Amount</div>
                   <div></div>
-                </div>
+                </div> 
+
+                <Suspense fallback="artifical loading state">
                 <Data />
+                </Suspense>
+
               </div>
             </div>
             <div className="horizontal-center"></div>

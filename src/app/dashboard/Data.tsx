@@ -1,20 +1,13 @@
 //import "../styling/DashboardPage.css";
 import SendMoney from "../components/SendMoney";
 import MintNFTForm from "../components/MintNFTForm";
+import { Suspense } from "react";
 
 type ABIMethod = {
-    anonymous?: boolean;
-    constant?: boolean;
-    inputs?: { indexed?: boolean; internalType: string; name: string; type: string }[];
-    name: string;
-    outputs?: { internalType: string; name: string; type: string }[];
-    payable?: boolean;
-    stateMutability: string;
-    type: string;
+    [key: string]: any; // Loose definition to allow any properties
   };
   
-  type ABI = ABIMethod[];
-  
+type ABI = ABIMethod[];
 
 interface AnswerItem {
     id: number;
@@ -24,12 +17,12 @@ interface AnswerItem {
     deposited: number; // or string
     tvl: number; // or string
     address: `0x${string}`; //forcing it to be a proper address, seems kinda dumb
-    abi: ABI;
+    //abi: ABI;
 }
 async function getData() {
     //get rid of the cache to make loads faster. 
     //but this proves that it does get it from the server.
-    const res = await fetch('http://localhost:3080', { next: { revalidate: 50 } })
+    const res = await fetch('http://localhost:3080', { cache: 'no-store' })
     // The return value is *not* serialized
     // You can return Date, Map, Set, etc.
 
@@ -38,8 +31,15 @@ async function getData() {
         throw new Error('Failed to fetch data') //maybe just return an error json
         return "error";
     }
+    await waitFor(3000);
 
     return res.json()
+}
+
+function waitFor(ms: number) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+    });
 }
 
 export default async function Data() {

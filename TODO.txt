@@ -17,4 +17,8 @@ uint256: CID
 so for CID were gonna use like this or whatever
 https://ipfs.io/ipfs/QmQWfb3mSuqGDdaW7gPZktC77nynPzyovEQe7BTp4J3FLD/images/00.png
 
-OMG I DONT KNOW WHAT A CID IS. AHHHH. NEED TO RUN. WHAT AM I DOING ;_:
+Seems like I need to install Pino? Honestly might be worth it to look more closely in how these packages are installed... since this repo is kinda living I kinda just threw shit together and let bun fix things, and it works,,, but there might be some duplications in package management?
+
+todoI could definitely add a navLinks class that acts the same as the previous React Framework,
+that displays the links and renders them
+so that I could more easily change things. ehhhh...

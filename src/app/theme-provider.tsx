@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import "./styling/App.css"
 import "./styling/Body.css"
@@ -31,13 +31,8 @@ interface ThemeAction {
   payload?: any;
 }
 
-
-// I should probably try if I could do this with just setters instead of using context and reduce
-//but I dont know the best way to let the change state method be available everywhere
-//this probably fine but I have no idea how it works tbh
 const ThemeContext = createContext<ThemeState | null>(null);
 const ThemeDispatchContext = createContext<React.Dispatch<ThemeAction> | null>(null);
-
 
 //Need to add a custom layout to other pages so that way you can conditionally render sidemenu
 //on homepage you dont want side menu but on other pages you do.
@@ -49,7 +44,6 @@ const ThemeDispatchContext = createContext<React.Dispatch<ThemeAction> | null>(n
 
 //WHERE THE FUCK IS DISCLAIMER?
 
-//maybe I should put useMobile here? 
 export default function ThemeProvider({ children }: any) {
 
   const [state, dispatch] = useReducer(themeReducer, initialTheme);

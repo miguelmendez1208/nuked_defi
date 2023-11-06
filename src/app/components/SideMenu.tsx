@@ -17,8 +17,8 @@ function SideMenu() {
     return (<></>);
   }
   //TODO: combine into one guard clause
-  if (pathname === "/"){
-    return(<></>);
+  if (pathname === "/") {
+    return (<></>);
   }
 
   //hard coding links
@@ -27,17 +27,36 @@ function SideMenu() {
       <div className={'side-menu left-sticky ' + (isMobile ? ' mobile' : '')}>
         <div className="h-100 display-flex-col">
           <div className="side-menu-top display-flex-col">
-            <Link href = "/">
-              Home
-            </Link>
-            <Link href = "/dashboard">
-              Dashboard
-            </Link>
+
+            <span key='side-menu-route-button-1' className="margin-bottom">
+              <Link href="/">
+                <Button className="side-menu-button no-padding">
+                  <span className="padding-top padding-bottom">Home</span>
+                </Button>
+              </Link>
+            </span>
+
+            <span key='side-menu-route-button-2' className="margin-bottom">
+              <Link href="/dashboard">
+                <Button className="side-menu-button no-padding">
+                  <span className="padding-top padding-bottom">Dashboard</span>
+                </Button>
+              </Link>
+            </span>
+
+            <span key='side-menu-route-button-3' className="margin-bottom">
+              <Link href="/testing">
+                <Button className="side-menu-button no-padding">
+                  <span className="padding-top padding-bottom">Testing</span>
+                </Button>
+              </Link>
+            </span>
+            
           </div>
         </div>
       </div>
     </div>
-  ); 
+  );
 }
 
 export default SideMenu;
