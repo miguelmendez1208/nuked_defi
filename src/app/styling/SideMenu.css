@@ -25,7 +25,9 @@
 }
 
 .side-menu-button {
-  transition: background-color var(--transition-time), border var(--transition-time),
+  transition:
+    background-color var(--transition-time),
+    border var(--transition-time),
     opacity var(--transition-time);
 }
 

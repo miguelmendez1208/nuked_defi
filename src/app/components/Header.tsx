@@ -8,6 +8,7 @@ import SettingsButton from './SettingsButton';
 import HamburgerMenu from './HamburgerMenu';
 import ConnectButton from './ConnectButton';
 import { useTheme } from '../theme-provider';
+import ChainSwitcher from './ChainSwitcher';
 
 interface HeaderProps {
   className?: string;
@@ -55,15 +56,16 @@ function Header(props: HeaderProps) {
         )}
         {!isMobile ? (
           <>
-            <div className="header-right gap-common">
+            <div className="header-right gap-common vertical-center">
               <SettingsButton />
+              <ChainSwitcher />
               <div className="align-self-center">
                 <ConnectButton/>
               </div>
             </div>
           </>
         ) : (
-          <HamburgerMenu></HamburgerMenu>
+          <HamburgerMenu/>
         )}
       </div>
     </div>
