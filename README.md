@@ -19,7 +19,14 @@ anvil
 ```
 https://book.getfoundry.sh/getting-started/installation
 ```
-and also the seperate backend repo 
+and also the seperate backend repo from here
+```
+https://github.com/miguelmendez1208/nuked_defi_backend
+```
+to clone it do:
+```
+gh repo clone miguelmendez1208/nuked_defi_backend
+```
 ```
 bun index.ts
 ```
@@ -28,15 +35,10 @@ bun can run typescript files so you dont have to compile it down to javascript (
 Click open app which leads you to the dashboard page.
 It will retrieve the vaults from the backend repo and display them, and display buttons to connect your account as well as send transaction to the addresses.
 
-Open 
-[http://localhost:3000](http://localhost:3000)
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## TODO
 Change naming conventions? probably check the exporting and importing of functions. It's """Best practice""" to have consistent naming convention but does it really matter? busy work.
-
-THE MISSING CSS IS IN NAVLINK AHHHHHH
 
 ## Learn More
 
