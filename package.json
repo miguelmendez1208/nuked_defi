@@ -12,6 +12,7 @@
     "@web3modal/wagmi": "^latest",
     "bignumber.js": "^latest",
     "next": "latest",
+    "pino-pretty": "^10.2.3",
     "react": "latest",
     "react-dom": "latest",
     "react-responsive": "latest",

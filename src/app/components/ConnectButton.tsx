@@ -7,7 +7,6 @@ export default function ConnectButton() {
   // 4. Use modal hook
   const modal = useWeb3Modal();
   
-  const state = useWeb3ModalState();
 
   return (
     <>

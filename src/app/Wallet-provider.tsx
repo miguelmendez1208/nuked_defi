@@ -15,8 +15,8 @@ const metadata = {
     icons: ['https://avatars.githubusercontent.com/u/37784886']
 }
 //temporarily riding of mainnet arbitrum
-const chains = [mainnet, arbitrum, goerli, Anvil, Arbitrum_Anvil]
-const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
+export const chains = [mainnet, arbitrum, goerli, Anvil, Arbitrum_Anvil]
+export const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 
 // 3. Create modal
 createWeb3Modal({

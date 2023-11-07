@@ -26,6 +26,9 @@ const ChainSwitcher = (props: ChainSwitcherProps) => {
       chainId = parseInt(parts[1], 10);
     }
   }
+  else{
+    chainId = selectedNetworkId;
+  }
 
   // Only attempt to get the chain icon if chainId is a number.
   const chainIcon = chainId ? ChainImage(chainId) : null;
@@ -37,7 +40,7 @@ const ChainSwitcher = (props: ChainSwitcherProps) => {
         onButtonClick={() => { modal.open({view: 'Networks'}) }}
         iconStart={chainIcon} // Render the appropriate chain icon
       >
-        {chainId} what is going on {selectedNetworkId}
+        {chainId}
       </Button>
     </div>
   );

@@ -1,6 +1,5 @@
 "use client"
 
-import './globals.css'
 import './styling/App.css';
 import './styling/themes.css';
 import './styling/Toast.css';

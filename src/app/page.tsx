@@ -1,6 +1,5 @@
 "use client";
 //theoretically we dont need these
-import './globals.css'
 import './styling/App.css';
 import './styling/themes.css';
 import './styling/Toast.css';

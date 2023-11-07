@@ -10,6 +10,10 @@ export default function ChainImage(chain_id: number): JSX.Element {
         return <OptimismIcon />;
       case 1:
         return <EthereumIcon />;
+      case 31337:
+        return <EthereumIcon />;
+      case 5:
+        return <EthereumIcon />;
       case 42161:
         return <ArbitrumIcon />;
       default:
