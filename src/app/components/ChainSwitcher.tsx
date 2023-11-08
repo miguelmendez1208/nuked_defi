@@ -32,6 +32,12 @@ const ChainSwitcher = (props: ChainSwitcherProps) => {
 
   // Only attempt to get the chain icon if chainId is a number.
   const chainIcon = chainId ? ChainImage(chainId) : null;
+  if(chainIcon===null){
+      console.log(chainId);
+      console.log(typeof(chainId));
+      console.log(selectedNetworkId);
+      console.log("arbitrum error?");
+  }
   console.log(selectedNetworkId);
   console.log(chainId);
   return (
