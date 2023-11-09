@@ -1,3 +1,4 @@
+"use client"
 import { useWeb3Modal, useWeb3ModalState } from '@web3modal/wagmi/react'
 
 import { useContext, useEffect, useState } from 'react';
@@ -12,8 +13,9 @@ const ChainSwitcher = (props: ChainSwitcherProps) => {
   const { className = '' } = props;
   const modal = useWeb3Modal();
   const { selectedNetworkId } = useWeb3ModalState();
-
-
+  //What the fuck kind of type is selectedNetworkId?
+  //AAAAAGHHHHHHHHHHHGHGHGHGHGH
+  
   // Initialize chainId as null
   let chainId: number | null = null;
 
@@ -29,17 +31,23 @@ const ChainSwitcher = (props: ChainSwitcherProps) => {
   else{
     chainId = selectedNetworkId;
   }
+  //this code is so ugly
+  //and its all because javascript doesn't have proper numbers
+  //I just default to ethereum 
 
   // Only attempt to get the chain icon if chainId is a number.
-  const chainIcon = chainId ? ChainImage(chainId) : null;
+  if (chainId === undefined){
+    chainId = 1
+  }
+  var chainIcon = ChainImage(chainId);
   if(chainIcon===null){
       console.log(chainId);
       console.log(typeof(chainId));
       console.log(selectedNetworkId);
       console.log("arbitrum error?");
   }
-  console.log(selectedNetworkId);
-  console.log(chainId);
+  console.log(chainIcon);
+
   return (
     <div className={'chain-switcher ' + className}>
       <Button

@@ -1,9 +1,8 @@
 "use client";
-//theoretically we dont need these
+
 import './styling/App.css';
 import './styling/themes.css';
 import './styling/Toast.css';
-
 import "./styling/Home.css"
 import Link from 'next/link'
 import { retrieveTermsAgreedTimestamp } from './functions/browser';
@@ -19,7 +18,7 @@ export default function Home() {
   const state = useTheme();
   const isMobile = state?.isMobile ?? false; //default to false
   //todo we should use ReactUseSync to retrieveTermsAgreedTimestamp here rather than coupling context together
-  //I do like that this guardclause works tho
+  //I do like that this guard clause works tho
   if (state?.showDisclaimer) {
     return (<Disclaimer></Disclaimer>);
   }

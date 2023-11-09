@@ -1,3 +1,4 @@
+"use client"
 import '../styling/Button.css';
 
 interface ButtonProps {
@@ -16,9 +17,9 @@ interface ButtonProps {
 const Button = (props: ButtonProps) => {
   let {
     text = '',
-    onButtonClick = () => {},
-    onMouseEnter = () => {},
-    onMouseLeave = () => {},
+    onButtonClick = () => { },
+    onMouseEnter = () => { },
+    onMouseLeave = () => { },
     disabled = false,
     selected = false,
     className = '',
@@ -36,7 +37,7 @@ const Button = (props: ButtonProps) => {
 
   return (
     <div
-      onClick={!disabled ? onButtonClick : () => {}}
+      onClick={!disabled ? onButtonClick : () => { }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       className={

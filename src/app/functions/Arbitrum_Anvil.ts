@@ -1,5 +1,7 @@
 import { Chain } from 'wagmi'
 //this might be moved elsewhere
+//also why does it automatically treat my arbitrum anvil node and the arbitrum node as equivalent? 
+//thats really annoying for testing
 export const Arbitrum_Anvil = {
   id: 42161,
   name: 'Arbitrum_Anvil',

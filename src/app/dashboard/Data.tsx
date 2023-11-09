@@ -44,7 +44,7 @@ function waitFor(ms: number) {
 
 export default async function Data() {
     const answer = await getData();
-    console.log(JSON.stringify(answer, null, 2));
+    //console.log(JSON.stringify(answer, null, 2));
     //handle errors w/ guard clause
     //does not work
     if (answer === "error") {

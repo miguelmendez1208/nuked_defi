@@ -1,7 +1,7 @@
 "use client"
 import { createWeb3Modal, defaultWagmiConfig, useWeb3ModalTheme } from '@web3modal/wagmi/react'
 import { WagmiConfig } from 'wagmi'
-import { arbitrum, mainnet, goerli } from 'wagmi/chains'
+import { arbitrum, mainnet, goerli, optimism } from 'wagmi/chains'
 // 1. Get projectId
 const projectId = '76e490f32ea4fd8fc7071f1d3ed3cc6d'
 import { Anvil } from './functions/Anvil'
@@ -15,7 +15,7 @@ const metadata = {
     icons: ['https://avatars.githubusercontent.com/u/37784886']
 }
 //temporarily riding of mainnet arbitrum
-export const chains = [mainnet, arbitrum, goerli, Anvil, Arbitrum_Anvil]
+export const chains = [mainnet, goerli, Anvil, Arbitrum_Anvil, optimism]
 export const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 
 // 3. Create modal
