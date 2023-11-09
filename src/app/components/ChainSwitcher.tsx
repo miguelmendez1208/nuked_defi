@@ -1,4 +1,4 @@
-"use client"
+//should be possible to do SSR for this.
 import { useWeb3Modal, useWeb3ModalState } from '@web3modal/wagmi/react'
 
 import { useContext, useEffect, useState } from 'react';
