@@ -16,7 +16,7 @@ const ChainSwitcher = (props: ChainSwitcherProps) => {
   //AAAAAGHHHHHHHHHHHGHGHGHGHGH
   
   // Initialize chainId as null
-  let chainId: number | null = null;
+  let chainId: number | null | undefined = null;
 
   // Check if selectedNetworkId is a string and has the expected format "network:chainId"
   if (typeof selectedNetworkId === 'string') {
