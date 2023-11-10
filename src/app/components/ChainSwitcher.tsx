@@ -49,6 +49,7 @@ const ChainSwitcher = (props: ChainSwitcherProps) => {
         onButtonClick={() => { modal.open({view: 'Networks'}) }}
         iconStart={chainIcon} // Render the appropriate chain icon
       >
+        {chainId}
       </Button>
     </div>
   );

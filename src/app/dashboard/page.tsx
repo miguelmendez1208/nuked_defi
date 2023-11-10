@@ -5,6 +5,7 @@ import PlayIcon from "../assets/icons/PlayIcon";
 import ArrowUpIcon from "../assets/icons/ArrowUpIcon";
 import Data from './Data';
 import { Suspense } from "react";
+import LoadingSpinner from "../components/LoadingSpinner";
 export default function DashboardPage() {
 
   const buildDashPositions = () => {
@@ -31,7 +32,7 @@ export default function DashboardPage() {
                   <div></div>
                 </div> 
 
-                <Suspense fallback="artifical loading state">
+                <Suspense fallback={<LoadingSpinner/>}>
                 <Data />
                 </Suspense>
 
