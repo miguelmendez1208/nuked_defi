@@ -43,7 +43,7 @@ const ChainSwitcher = (props: ChainSwitcherProps) => {
   //I just default to ethereum 
 
   // Only attempt to get the chain icon if chainId is a number.
-  if (chainId === undefined){
+  if (chainId === undefined || chainId === null){
     chainId = 1
   }
   var chainIcon = ChainImage(chainId);
