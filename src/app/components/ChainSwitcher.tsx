@@ -20,12 +20,16 @@ const ChainSwitcher = (props: ChainSwitcherProps) => {
 
   // Check if selectedNetworkId is a string and has the expected format "network:chainId"
   if (typeof selectedNetworkId === 'string') {
-    console.log(selectedNetworkId);
+    console.log("selected NetworkId " + selectedNetworkId);
 
     const parts = selectedNetworkId.split(':');
     if (parts.length === 2 && !isNaN(Number(parts[1]))) {
       chainId = parseInt(parts[1], 10);
     }
+  }
+  else if(typeof selectedNetworkId === undefined){
+    console.log("undefined, oh this is because im checking the network id without checking if its open");
+    chainId = 1;
   }
   else{
     chainId = selectedNetworkId;
