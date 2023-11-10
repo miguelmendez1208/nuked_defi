@@ -15,7 +15,7 @@ interface AnswerItem {
     available: number; // or string
     deposited: number; // or string
     tvl: number; // or string
-    address: `0x${string}`; //forcing it to be a proper address, seems kinda dumb
+    address: string;
     //abi: ABI;
 }
 async function getData() {

@@ -27,19 +27,19 @@ export default function HamburgerMenu() {
   return (
     <nav className="hamburger-menu">
       <Button
-        className={`hamburger-btn ${state.hamburgerMenuPosition}-padded`}
+        className={`hamburger-btn ${state ? state.hamburgerMenuPosition : ''}-padded`}
         onButtonClick={handleToggle}
       >
         <div className="hamburger-button-icon">
           <HamburgerIcon /></div>
       </Button>
       <div
-        className={`hamburger-overlay ${state.hamburgerMenuPosition} ${navbarOpen ? ' show-menu' : ''
+        className={`hamburger-overlay ${state ? state.hamburgerMenuPosition : ''} ${navbarOpen ? ' show-menu' : ''
           }`}
         onClick={closeMenu}
       />
       <div
-        className={`hamburger-panel ${state.hamburgerMenuPosition} border-clear ${navbarOpen ? ' show-menu' : ''
+        className={`hamburger-panel ${state ? state.hamburgerMenuPosition : ''} border-clear ${navbarOpen ? ' show-menu' : ''
           }`}
       >
         <div className="w-100 h-100 display-flex">
