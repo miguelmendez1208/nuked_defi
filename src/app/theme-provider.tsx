@@ -117,7 +117,7 @@ function themeReducer(state: ThemeState, action: ThemeAction): ThemeState {
     case 'TOGGLE_MOBILE':
       return {
         ...state,
-        isMobile: !state.isMobile,
+        isMobile: action.payload,
       };
     case 'SET_HAMBURGER_POSITION':
       if (typeof action.payload === 'string') {
