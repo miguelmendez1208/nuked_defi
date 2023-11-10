@@ -31,6 +31,10 @@ const ChainSwitcher = (props: ChainSwitcherProps) => {
     console.log("undefined, oh this is because im checking the network id without checking if its open");
     chainId = 1;
   }
+  else if(typeof selectedNetworkId == undefined){
+    console.log("undefined, oh this is because im checking the network id without checking if its open");
+    chainId = 1;
+  }
   else{
     chainId = selectedNetworkId;
   }
