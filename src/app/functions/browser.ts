@@ -1,6 +1,9 @@
 declare const window: any;
 const DEBUG_MODE = false;
-
+//I saw this on twitter idk where we should implement it but its relevant.
+//should add this in with react sync external when I have time or whatever
+//https://x.com/asidorenko_/status/1722682139722862630?s=20
+//:)
 export function saveTheme(theme: string) {
   window.localStorage.setItem('theme', theme);
 }

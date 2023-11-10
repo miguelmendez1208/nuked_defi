@@ -1,7 +1,6 @@
 //should be possible to do SSR for this.
 import { useWeb3Modal, useWeb3ModalState } from '@web3modal/wagmi/react'
 
-import { useContext, useEffect, useState } from 'react';
 import ChainImage from './ChainImage';
 import Button from './Button';
 
@@ -41,20 +40,15 @@ const ChainSwitcher = (props: ChainSwitcherProps) => {
   }
   var chainIcon = ChainImage(chainId);
   if(chainIcon===null){
-      console.log(chainId);
-      console.log(typeof(chainId));
-      console.log(selectedNetworkId);
+
       console.log("arbitrum error?");
   }
-  console.log(chainIcon);
-
   return (
     <div className={'chain-switcher ' + className}>
       <Button
         onButtonClick={() => { modal.open({view: 'Networks'}) }}
         iconStart={chainIcon} // Render the appropriate chain icon
       >
-        {chainId}
       </Button>
     </div>
   );

@@ -3,6 +3,10 @@ import Button from './Button';
 import Twitter from '../assets/icons/brands/Twitter';
 import Discord from '../assets/icons/brands/Discord';
 import '../styling/Footer.css';
+import Modal from './Modal';
+//wait maybe we don't need use disclaimer?
+import Disclaimer from './Disclaimer';
+
 import Link from 'next/link';
 import { useThemeDispatch } from '../theme-provider';
 
@@ -12,7 +16,8 @@ function Footer() {
   const twitterUrl = 'https://twitter.com/';
   const docsUrl = 'https://github.com/';
 
-  //this is such ugly code actually
+  //The disclaimer is different but doesn't seem like big of a deal enough to actually change
+
   const dispatch = useThemeDispatch();
   const setDisclaimer = () => {
     if (dispatch !== null) {

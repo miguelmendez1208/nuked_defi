@@ -3,7 +3,6 @@
 import { useTheme, useThemeDispatch} from "../theme-provider";
 import Button from './Button';
 import Modal from './Modal';
-//todo reimplement saveHamburgerMenuPosition
 //todo reimplement saveAutoBrowserWallet
 import {
   saveTheme,
@@ -29,6 +28,17 @@ const SettingsModal = (props: SettingsModalProps) => {
       console.error('Dispatch or State context is null. Are you within a ThemeProvider?');
     }
   };
+
+  const setMenuPosition = (position: string) => {
+    if (dispatch !== null) {
+      dispatch({ type: 'SET_HAMBURGER_POSITION', payload: position });
+      saveHamburgerMenuPosition(position);
+    } else {
+      console.error('Dispatch context is null. Are you within a ThemeProvider?');
+    }
+  };
+  
+
   //ugly method name
   const setClose = (open: boolean) => {
     if (dispatch !== null) {
@@ -94,6 +104,33 @@ const SettingsModal = (props: SettingsModalProps) => {
               className="theme-button margin-bottom"
             />
           </div>
+
+          <div className="margin-bottom padding-top">Hamburger Menu Position (Mobile Only)</div>
+          <div className="display-flex flex-flow-row-wrap">
+            <Button
+              text="Left"
+              onButtonClick={() => {
+                setMenuPosition('left');
+              }}
+              selected={state.hamburgerMenuPosition === 'left'}
+              className={
+                'margin-right theme-button border-full border-color-light ' +
+                (state.hamburgerMenuPosition === 'left' ? ' inverted-palette-box' : '')
+              }
+            />
+            <Button
+              text="Right"
+              onButtonClick={() => {
+                setMenuPosition('right');
+              }}
+              selected={state.hamburgerMenuPosition === 'right'}
+              className={
+                'margin-right theme-button border-full border-color-light ' +
+                (state.hamburgerMenuPosition === 'right' ? ' inverted-palette-box' : '')
+              }
+            />
+          </div>
+
           </Modal>
       ) : (
         <></>

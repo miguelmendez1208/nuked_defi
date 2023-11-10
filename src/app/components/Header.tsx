@@ -9,7 +9,7 @@ import HamburgerMenu from './HamburgerMenu';
 import ConnectButton from './ConnectButton';
 import { useTheme } from '../theme-provider';
 import ChainSwitcher from './ChainSwitcher';
-
+import Button from './Button';
 interface HeaderProps {
   className?: string;
 }
@@ -36,14 +36,46 @@ function Header(props: HeaderProps) {
                 <div className="app-logo fill-svg-primary h-100">
                   <AppLogo />
                 </div>
-
               </Link>
             </div>
           </div>
         ) : (
           <div className="header-mobile-title-container w-100">
             <h3 className="header-mobile-title">
-              <p> INSERT LINKS HERE LATER </p>
+
+            <span key={'hamburger-route-button-' + 1}>
+                <Link href="/">
+                  <Button
+                  >
+                    <span className="padding-top padding-bottom padding-right">
+                      Home
+                    </span>
+                  </Button>
+                </Link>
+              </span>
+
+              <span key={'hamburger-route-button-' + 2}>
+                <Link href="/dashboard">
+                  <Button
+                  >
+                    <span className="padding-top padding-bottom padding-right">
+                      Dashboard
+                    </span>
+                  </Button>
+                </Link>
+              </span>
+
+              <span key={'hamburger-route-button-' + 3}>
+                <Link href="/testing">
+                  <Button
+                  >
+                    <span className="padding-top padding-bottom padding-right">
+                      Testing
+                    </span>
+                  </Button>
+                </Link>
+              </span>
+            
             </h3>
           </div>
         )}

@@ -9,7 +9,7 @@ interface DisclaimerProps {
   readMode?: boolean;
   className?: string;
 }
-
+//todo properly use local stroage function :)
 function Disclaimer(props: DisclaimerProps) {
 
   const state = useTheme();

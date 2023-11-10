@@ -2,12 +2,11 @@
 import { useWeb3Modal, useWeb3ModalState } from '@web3modal/wagmi/react'
 import Button from './Button';
 import WalletIcon from '../assets/icons/WalletIcon';
-
+//this is called ConnectWalletButton in the old template
 export default function ConnectButton() {
   // 4. Use modal hook
   const modal = useWeb3Modal();
   
-
   return (
     <>
       <Button text="Connect Wallet" onButtonClick={() => { modal.open() }}
