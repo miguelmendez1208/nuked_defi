@@ -1,13 +1,20 @@
 /** @type {import('next').NextConfig} */
-//const nextConfig = {}
+const nextConfig = {
+  images: {
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+  webpack: (config) => {
+    config.externals.push(
+      "pino-pretty",
+      "lokijs",
+      "encoding"
+    );
+  return config;
+}
+}
 
-//module.exports = nextConfig
+module.exports = nextConfig
 
-//TODO: change this for secure content policy CSP? 
-module.exports = {
-    images: {
-      dangerouslyAllowSVG: true,
-      contentDispositionType: 'attachment',
-      contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    },
-  }
+//todo change for Content Security Policy
