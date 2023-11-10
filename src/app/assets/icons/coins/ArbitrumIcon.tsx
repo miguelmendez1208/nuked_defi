@@ -1,7 +1,6 @@
 import * as React from "react"
 
-function ArbitrumIcon(props) {
-    console.log("WHAT IS GOING ON >:(");
+function ArbitrumIcon(props:any) {
     return (
         <svg
           xmlns="http://www.w3.org/2000/svg"
