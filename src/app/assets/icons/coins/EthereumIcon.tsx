@@ -1,6 +1,6 @@
-const EthereumIcon = () => {
+const EthereumIcon = ({className=""}:any) => {
     return(
-<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
 <g clipPath="url(#clip0_725_15047)">
 <path d="M12.8594 24C19.4868 24 24.8594 18.6274 24.8594 12C24.8594 5.37258 19.4868 0 12.8594 0C6.23196 0 0.859375 5.37258 0.859375 12C0.859375 18.6274 6.23196 24 12.8594 24Z" fill="#627EEA"/>
 <path d="M12.8594 3V9.6525L18.4821 12.165L12.8594 3Z" fill="white" fillOpacity="0.602"/>

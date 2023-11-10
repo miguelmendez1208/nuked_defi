@@ -12,15 +12,15 @@ interface ChainImageProps{
 export default function ChainImage(chain_id: number = 1): JSX.Element {
     switch (chain_id) {
       case 10:
-        return <OptimismIcon />;
+        return <OptimismIcon className="svg-icon padding-right-half"/>;
       case 1:
-        return <EthereumIcon />;
+        return <EthereumIcon className="svg-icon padding-right-half"/>;
       case 31337:
-        return <EthereumIcon />;
+        return <EthereumIcon className="svg-icon padding-right-half"/>;
       case 5:
-        return <EthereumIcon />;
+        return <EthereumIcon className="svg-icon padding-right-half"/>;
       case 42161:
-        return <ArbitrumIcon />
+        return <ArbitrumIcon className="svg-icon padding-right-half"/>
       default:
         // Explicitly assert never to ensure all cases are handled
         throw new Error(`Unhandled chain ID: ${chain_id}`);
