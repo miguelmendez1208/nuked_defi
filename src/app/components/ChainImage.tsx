@@ -2,11 +2,14 @@
 import OptimismIcon from '../assets/icons/coins/OptimismIcon';
 import EthereumIcon from '../assets/icons/coins/EthereumIcon';
 import ArbitrumIcon from '../assets/icons/coins/ArbitrumIcon';
+
+interface ChainImageProps{
+  chain_id?: number;
+};
 // ChainImage function component
 // Default export of the function
 //JSX element is equivalent to React Node... at least it should be...
-export default function ChainImage(chain_id: number): JSX.Element {
-
+export default function ChainImage(chain_id: number = 1): JSX.Element {
     switch (chain_id) {
       case 10:
         return <OptimismIcon />;
