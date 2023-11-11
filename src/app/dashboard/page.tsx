@@ -8,6 +8,9 @@ import { Suspense } from "react";
 import LoadingSpinner from "../components/LoadingSpinner";
 export default function DashboardPage() {
 
+  //todo reimplement build important button?
+
+
   const buildDashPositions = () => {
     return (
       <div className="display-flex-col w-100">
@@ -15,7 +18,7 @@ export default function DashboardPage() {
           <div className="display-flex-col gap-double">
             <div className="horizontal-center">
               <div className="dash-icon fill-icon-color-light-1 vertical-center border-radius-full padding-full">
-                <ArrowUpIcon />
+                <ArrowUpIcon className="dash-icon-size" />
               </div>
             </div>
             <div className="horizontal-center font-xxl font-bold-half font-secondary">Thing 1</div>
@@ -30,10 +33,10 @@ export default function DashboardPage() {
                   <div>TVL</div>
                   <div>Amount</div>
                   <div></div>
-                </div> 
+                </div>
 
-                <Suspense fallback={<LoadingSpinner/>}>
-                <Data />
+                <Suspense fallback={<LoadingSpinner />}>
+                  <Data />
                 </Suspense>
 
               </div>
@@ -46,14 +49,34 @@ export default function DashboardPage() {
   };
 
 
+  const buildDashStaking = () => {
+    return (
+      <div className="border-full border-color-light filled-bg border-radius-full padding-double w-100">
+        <div className="display-flex-col gap-double">
+          <div className="horizontal-center">
+            <div className="dash-icon fill-icon-color-light-1 vertical-center border-radius-full padding-full">
+                <MoonIcon className="fill-svg-primary dash-icon-size"/>
+            </div>
+          </div>
+          <div className="horizontal-center font-xxl font-bold-half font-secondary">Thing 3</div>
+          <div className="horizontal-center">
+            <div className="dashboard-text text-center text-color-light-4">
+              Description of third thing here.
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const buildDashStability = () => {
     return (
       <div className="border-full border-color-light filled-bg border-radius-full padding-double w-100">
         <div className="display-flex-col gap-double">
           <div className="horizontal-center">
             <div className="dash-icon fill-icon-color-light-1 vertical-center border-radius-full padding-full">
-              <PlayIcon />
-            </div>
+            <PlayIcon className="fill-svg-primary dash-icon-size" />
+          </div>
           </div>
           <div className="horizontal-center font-xxl font-bold-half font-secondary">Thing 2</div>
           <div className="horizontal-center">
@@ -67,29 +90,7 @@ export default function DashboardPage() {
     );
   };
 
-  const buildDashStaking = () => {
-    return (
-      <div className="border-full border-color-light filled-bg border-radius-full padding-double w-100">
-        <div className="display-flex-col gap-double">
-          <div className="horizontal-center">
-            <div className="dash-icon fill-icon-color-light-1 vertical-center border-radius-full padding-full">
-              <div className="fill-svg-primary dash-icon-size">
-                <div className="icon flat-color">
-                  <MoonIcon />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="horizontal-center font-xxl font-bold-half font-secondary">Thing 3</div>
-          <div className="horizontal-center">
-            <div className="dashboard-text text-center text-color-light-4">
-              Description of third thing here.
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
+
 
   return (
     <>

@@ -1,10 +1,11 @@
-const ExampleLogo = () => {
+const ExampleLogo = ({className=""}:any) => {
     return (
 <svg
    viewBox="0 0 120 72"
    version="1.1"
    id="svg5"
-   xmlns="http://www.w3.org/2000/svg">
+   xmlns="http://www.w3.org/2000/svg"
+   className={className}>
   <defs
      id="defs2" />
   <g

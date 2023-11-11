@@ -33,9 +33,7 @@ function Header(props: HeaderProps) {
           <div className="header-left h-100">
             <div className="header-logo-container w-100" key={'header-route-button'}>
               <Link href="/">
-                <div className="app-logo fill-svg-primary h-100">
-                  <AppLogo />
-                </div>
+                  <AppLogo className="app-logo fill-svg-primary h-100"/>
               </Link>
             </div>
           </div>

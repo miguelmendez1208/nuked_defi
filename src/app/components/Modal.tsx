@@ -33,9 +33,7 @@ const Modal = (props: ModalProps) => {
             onClick={props.handleClose}
             className="modal-close display-inline-block clickable unselectable"
           >
-            <div className="fill-svg-primary"> 
-            <XIcon/>
-            </div>
+            <XIcon className="fill-svg-primary"/>
           </div>
         </div>
         <div className={'modal-body border-radius-bottom ' + classNameBody}>{props.children}</div>

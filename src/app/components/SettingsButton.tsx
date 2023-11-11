@@ -24,9 +24,7 @@ const SettingsButton = (props: SettingsButtonProps) => {
       onButtonClick={toggleSettings}
       className={'settings-button icon-button ' + className}
     >
-      <div className="svg-icon svg-shadow w-100">
-        <CogIcon />
-      </div>
+        <CogIcon className="svg-icon svg-shadow w-100"/>
     </Button>
   );
 };

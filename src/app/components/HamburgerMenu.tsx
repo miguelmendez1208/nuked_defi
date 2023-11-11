@@ -30,8 +30,7 @@ export default function HamburgerMenu() {
         className={`hamburger-btn ${state ? state.hamburgerMenuPosition : ''}-padded`}
         onButtonClick={handleToggle}
       >
-        <div className="hamburger-button-icon">
-          <HamburgerIcon /></div>
+          <HamburgerIcon className="hamburger-button-icon" />
       </Button>
       <div
         className={`hamburger-overlay ${state ? state.hamburgerMenuPosition : ''} ${navbarOpen ? ' show-menu' : ''
@@ -50,9 +49,7 @@ export default function HamburgerMenu() {
                 className="w-100 padding-bottom horizontal-center"
                 onClick={closeMenu}
               >
-                <div className="hamburger-panel-header w-100 fill-svg-primary">
-                  <ExampleLogo />
-                </div>
+                  <ExampleLogo className="hamburger-panel-header w-100 fill-svg-primary"/>
               </Link>
 
               <span key={'hamburger-route-button-' + 1}>

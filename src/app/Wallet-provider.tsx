@@ -41,8 +41,6 @@ import ThemeProvider from './theme-provider'
 //this works but why how the fuck
 //how the fuck does it know where the modal is?
 
-
-
 export default function WagmiWallet({ children }: any) {
     return (
             <ThemeProvider>
