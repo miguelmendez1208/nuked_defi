@@ -31,7 +31,12 @@ import ThemeProvider from './theme-provider'
   createWeb3Modal({
     ethersConfig: defaultConfig({ metadata }),
     chains,
-    projectId
+    projectId,
+    themeMode: 'light',
+    themeVariables: {
+      '--w3m-color-mix': '#00DCFF',
+      '--w3m-color-mix-strength': 20
+    }
   })
 //I should look up the theme variables, also maybe properly type the children?
 //it would be a react node aka jsx element
