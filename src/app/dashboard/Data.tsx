@@ -91,7 +91,6 @@ export default async function Data() {
             <div className="entry"> {item.available} </div>
             <div className="entry"> {item.deposited} </div>
             <div className="entry"> {item.tvl} </div>
-            <SendMoney destination={item.address} />
         </div>
     ));
     //            <MintNFTForm address={item.address} abi={item.abi}/>
