@@ -1,3 +1,5 @@
+//old code
+/*
 "use client"
 import React, { useState } from 'react';
 import { useSendTransaction, usePrepareSendTransaction } from 'wagmi';
@@ -41,3 +43,4 @@ export default function SendMoney({ destination = "0xC92E8bdf79f0507f65a392b0ab4
     </>
   );
 }
+*/
