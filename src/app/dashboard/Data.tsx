@@ -1,5 +1,5 @@
 //import "../styling/DashboardPage.css";
-import SendMoney from "../components/SendMoney";
+//import SendMoney from "../components/SendMoney";
 import MintNFTForm from "../components/MintNFTForm";
 
 type ABIMethod = {
