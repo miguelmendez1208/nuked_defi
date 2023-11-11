@@ -1,3 +1,5 @@
+//old code
+/*
 "use client"
 
 import { createWeb3Modal, defaultWagmiConfig, useWeb3ModalTheme } from '@web3modal/wagmi/react'
@@ -38,3 +40,4 @@ export default function WagmiWallet({ children }: any) {
         </WagmiConfig>
     )
 }
+*/

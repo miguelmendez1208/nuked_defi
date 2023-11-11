@@ -1,5 +1,5 @@
 "use client"
-import { useWeb3Modal, useWeb3ModalState } from '@web3modal/wagmi/react'
+import { useWeb3Modal, useWeb3ModalState } from '@web3modal/ethers5/react'
 import Button from './Button';
 import WalletIcon from '../assets/icons/WalletIcon';
 //this is called ConnectWalletButton in the old template

@@ -1,5 +1,5 @@
 //should be possible to do SSR for this.
-import { useWeb3Modal, useWeb3ModalState } from '@web3modal/wagmi/react'
+import { useWeb3Modal, useWeb3ModalState } from '@web3modal/ethers5/react'
 
 import ChainImage from './ChainImage';
 import Button from './Button';
