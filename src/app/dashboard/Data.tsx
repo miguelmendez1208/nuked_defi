@@ -102,7 +102,7 @@ export default async function Data() {
                 <p>{item.tvl}</p>
             </div>
             <div className="grid-item">
-                <input className="w-full p-2 rounded-md" min="0" placeholder="Enter a number" type="number" />
+                <input min="0" placeholder="Enter a number" type="number" />
             </div>
             <div className="grid-item">
                 <Button className="submit-button">
