@@ -38,15 +38,18 @@ import ThemeProvider from './theme-provider'
       '--w3m-color-mix-strength': 20
     }
   })
-//I should look up the theme variables, also maybe properly type the children?
-//it would be a react node aka jsx element
+
 
 //for some reason I don't need to make wagmi provider component around react?
 //it does all the javascript outside of react?
 //this works but why how the fuck
 //how the fuck does it know where the modal is?
 
-export default function WagmiWallet({ children }: any) {
+export default function WagmiWallet({
+   children,
+   }: {
+    children: React.ReactNode
+  }) {
     return (
             <ThemeProvider>
                 {children}

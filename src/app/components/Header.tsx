@@ -14,13 +14,12 @@ import { usePathname } from 'next/navigation';
 interface HeaderProps {
   className?: string;
 }
-//maybe client function?
+
 function Header(props: HeaderProps) {
   const state = useTheme(); // Use the useTheme hook to get the theme state
   const { className = '' } = props;
   const path = usePathname();
-  console.log("is mobile is?: " + state?.isMobile);
-  //HEADER IS IN HERE
+
   return (
     <div
       className={

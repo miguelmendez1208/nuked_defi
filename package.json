@@ -17,8 +17,7 @@
     "react": "latest",
     "react-dom": "latest",
     "react-responsive": "latest",
-    "react-select": "latest",
-    "tailwind": "^4.0.0"
+    "react-select": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",

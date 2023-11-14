@@ -3,10 +3,9 @@
 import './styling/App.css';
 import './styling/themes.css';
 import './styling/Toast.css';
-
 import "./styling/Home.css"
-
 import "./styling/Body.css"
+
 import { createContext, useContext, useReducer, useEffect } from 'react'
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -38,16 +37,6 @@ interface ThemeAction {
 
 const ThemeContext = createContext<ThemeState | null>(null);
 const ThemeDispatchContext = createContext<React.Dispatch<ThemeAction> | null>(null);
-
-//Need to add a custom layout to other pages so that way you can conditionally render sidemenu
-//on homepage you dont want side menu but on other pages you do.
-//how ima do that idk
-//maybe have sidemenu hook into the page location?
-//but that seems ugly
-//could create two different layouts
-//our put a variable in 
-
-//WHERE THE FUCK IS DISCLAIMER?
 
 export default function ThemeProvider({ children }: any) {
 

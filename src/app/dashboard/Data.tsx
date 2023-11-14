@@ -85,27 +85,27 @@ export default async function Data() {
     }
     //this is such a ugly way to apply CSS to divs
     const listItems = answer.map((item: AnswerItem) => (
-        <div className="gridDashboard2" key={item.id}>
-            <div className="bg-gray-200 p-4 rounded-md shadow-md">
+        <div className="grid-container" key={item.id}>
+            <div className="grid-item">
                 <p>{item.name}</p>
             </div>
-            <div className="bg-gray-200 p-4 rounded-md shadow-md">
+            <div className="grid-item">
                 <p>{item.apy}</p>
             </div>
-            <div className="bg-gray-200 p-4 rounded-md shadow-md">
+            <div className="grid-item">
                 <p>{item.available}</p>
             </div>
-            <div className="bg-gray-200 p-4 rounded-md shadow-md">
+            <div className="grid-item">
                 <p>{item.deposited}</p>
             </div>
-            <div className="bg-gray-200 p-4 rounded-md shadow-md">
+            <div className="grid-item">
                 <p>{item.tvl}</p>
             </div>
-            <div className="bg-gray-200 p-4 rounded-md shadow-md">
+            <div className="grid-item">
                 <input className="w-full p-2 rounded-md" min="0" placeholder="Enter a number" type="number" />
             </div>
-            <div className="bg-gray-200 p-4 rounded-md shadow-md">
-                <Button className="w-full py-2 px-4 text-white bg-blue-500 hover:bg-blue-600 rounded-md">
+            <div className="grid-item">
+                <Button className="submit-button">
                     Submit
                 </Button>
             </div>

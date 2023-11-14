@@ -22,29 +22,27 @@ export default function DashboardPage() {
               </div>
             </div>
             <div className="horizontal-center font-xxl font-bold-half font-secondary">Thing 1</div>
-            <div className="horizontal-center">
-              <div className="dashboard-text text-center text-color-light-4">
 
-                <div className="gridDashboard">
-                  <div className="bg-gray-200 p-4 rounded-md shadow-md">
+                <div className="grid-container">
+                  <div className="grid-item">
                     <p>Token</p>
                   </div>
-                  <div className="bg-gray-200 p-4 rounded-md shadow-md">
+                  <div className="grid-item">
                     <p>APY</p>
                   </div>
-                  <div className="bg-gray-200 p-4 rounded-md shadow-md">
+                  <div className="grid-item">
                     <p>Available</p>
                   </div>
-                  <div className="bg-gray-200 p-4 rounded-md shadow-md">
+                  <div className="grid-item">
                     <p>Deposited</p>
                   </div>
-                  <div className="bg-gray-200 p-4 rounded-md shadow-md">
+                  <div className="grid-item">
                     <p>TVL</p>
                   </div>
-                  <div className="bg-gray-200 p-4 rounded-md shadow-md">
+                  <div className="grid-item">
                     <p>Amount</p>
                   </div>
-                  <div className="bg-gray-200 p-4 rounded-md shadow-md">
+                  <div className="grid-item">
                     <p />
                   </div>
                 </div>
@@ -53,8 +51,6 @@ export default function DashboardPage() {
                   <Data />
                 </Suspense>
 
-              </div>
-            </div>
             <div className="horizontal-center"></div>
           </div>
         </div>

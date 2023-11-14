@@ -16,11 +16,7 @@ function SideMenu() {
   const isMobile = state?.isMobile ?? false; // Use nullish coalescing to default to false if state is null
   const pathname = usePathname()
   //guardclause
-  if (isMobile) {
-    return (<></>);
-  }
-  //TODO: combine into one guard clause
-  if (pathname === "/") {
+  if (isMobile || pathname ==="/") {
     return (<></>);
   }
 
