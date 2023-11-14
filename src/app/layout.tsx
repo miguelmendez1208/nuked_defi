@@ -16,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <div className="root">
         <GridWallet>{children}</GridWallet>
+        </div>
       </body>
     </html>
   )

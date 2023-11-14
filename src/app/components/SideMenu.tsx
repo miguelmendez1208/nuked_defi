@@ -31,7 +31,7 @@ function SideMenu() {
         <div className="side-menu-top display-flex-col flex-grow-1">
 
             <span key='side-menu-route-button-1' className="margin-bottom">
-              <Link href="/">
+              <Link href="/" className={`link ${pathname ==='/' ? 'selected-route' : ''}`}>
                 <Button className="side-menu-button no-padding" iconStart={<HomeIcon className="svg-icon fill-svg-primary margin-half padding-half"/>} >
                   <span className="padding-top padding-bottom">Home</span>
                 </Button>
@@ -39,7 +39,7 @@ function SideMenu() {
             </span>
 
             <span key='side-menu-route-button-2' className="margin-bottom">
-              <Link href="/dashboard">
+              <Link href="/dashboard" className={`link ${pathname ==='/dashboard' ? 'selected-route' : ''}`}>
                 <Button className="side-menu-button no-padding" iconStart={<DashboardIcon className="svg-icon fill-svg-primary margin-half padding-half"/>}>
                   <span className="padding-top padding-bottom">Dashboard</span>
                 </Button>
@@ -47,7 +47,7 @@ function SideMenu() {
             </span>
 
             <span key='side-menu-route-button-3' className="margin-bottom">
-              <Link href="/testing">
+              <Link href="/testing" className={`link ${pathname ==='/testing' ? 'selected-route' : ''}`}>
                 <Button className="side-menu-button no-padding" iconStart={<PlayIcon className="svg-icon fill-svg-primary margin-half padding-half"/>}>
                   <span className="padding-top padding-bottom">Testing</span>
                 </Button>

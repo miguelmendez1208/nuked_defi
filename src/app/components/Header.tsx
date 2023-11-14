@@ -1,4 +1,4 @@
-//"use client"
+"use client"
 //This definitely should just be a client function, but why does it work? I should definitely just move all the themeing back
 //up to the theme-provider context
 import Link from 'next/link';  // Imported Link from next/link for navigation
@@ -9,31 +9,33 @@ import HamburgerMenu from './HamburgerMenu';
 import ConnectButton from './ConnectButton';
 import { useTheme } from '../theme-provider';
 import ChainSwitcher from './ChainSwitcher';
-import Button from './Button';
+import { usePathname } from 'next/navigation';
+
 interface HeaderProps {
   className?: string;
 }
 //maybe client function?
 function Header(props: HeaderProps) {
   const state = useTheme(); // Use the useTheme hook to get the theme state
-  const isMobile = state?.isMobile ?? false; // Use nullish coalescing to default to false if state is null
   const { className = '' } = props;
-
+  const path = usePathname();
+  console.log("is mobile is?: " + state?.isMobile);
+  //HEADER IS IN HERE
   return (
     <div
       className={
         'header padding-full vertical-center horizontal-center gap-common' +
-        (isMobile ? ' mobile' : '') +
+        (state?.isMobile ? ' mobile' : '') +
         ' top-sticky ' +
         className
       }
     >
       <div className="header-container display-flex-center">
-        {!isMobile ? (
+        {!state?.isMobile ? (
           <div className="header-left h-100">
             <div className="header-logo-container w-100" key={'header-route-button'}>
               <Link href="/">
-                  <AppLogo className="app-logo fill-svg-primary h-100"/>
+                <AppLogo className="app-logo fill-svg-primary h-100" />
               </Link>
             </div>
           </div>
@@ -41,61 +43,32 @@ function Header(props: HeaderProps) {
           <div className="header-mobile-title-container w-100">
             <h3 className="header-mobile-title">
 
-            <span key={'hamburger-route-button-' + 1}>
-                <Link href="/">
-                  <Button
-                  >
-                    <span className="padding-top padding-bottom padding-right">
-                      Home
+                    <span className="mobile-route-title">
+                      {path}
                     </span>
-                  </Button>
-                </Link>
-              </span>
 
-              <span key={'hamburger-route-button-' + 2}>
-                <Link href="/dashboard">
-                  <Button
-                  >
-                    <span className="padding-top padding-bottom padding-right">
-                      Dashboard
-                    </span>
-                  </Button>
-                </Link>
-              </span>
-
-              <span key={'hamburger-route-button-' + 3}>
-                <Link href="/testing">
-                  <Button
-                  >
-                    <span className="padding-top padding-bottom padding-right">
-                      Testing
-                    </span>
-                  </Button>
-                </Link>
-              </span>
-            
             </h3>
           </div>
         )}
-        {!isMobile && (
+        {!state?.isMobile && (
           <div className="header-center w-100">
             <div className="header-center-positioning">
               <div className="display-flex-row display-flex-align-start w-100 gap-common horizontal-center"></div>
             </div>
           </div>
         )}
-        {!isMobile ? (
+        {!state?.isMobile ? (
           <>
             <div className="header-right gap-common vertical-center">
               <SettingsButton />
               <ChainSwitcher />
               <div className="align-self-center">
-                <ConnectButton/>
+                <ConnectButton />
               </div>
             </div>
           </>
         ) : (
-          <HamburgerMenu/>
+          <HamburgerMenu />
         )}
       </div>
     </div>
