@@ -1,5 +1,5 @@
 //changing this to a string so that it can be a ts file
-
+//currently unused
 export interface RouteConfig {
     name: string;
     path: string;
