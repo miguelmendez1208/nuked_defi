@@ -1,4 +1,5 @@
 "use client"
+/*
 import * as React from 'react'
 import {
     usePrepareContractWrite,
@@ -48,3 +49,5 @@ export default function MintNFTForm({ address = "0xFBA3912Ca04dd458c843e2EE08967
         </div>
       );
 }
+
+*/
