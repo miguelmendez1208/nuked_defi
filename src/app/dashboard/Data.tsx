@@ -26,27 +26,27 @@ async function getData() {
         {
             id: 0,
             name: "Curve",
-            apy: 49.23,
-            available: 32,
-            deposited: 12.4,
-            tvl: 5296202,
+            apy: 2.61,
+            available: 0,
+            deposited: 0,
+            tvl: 52962,
             address: "0xC92E8bdf79f0507f65a392b0ab4667716BFE0110"
         },
         {
             id: 1,
             name: "Ethereum",
-            apy: 21.23,
+            apy: 4.23,
             available: 12,
-            deposited: 4,
+            deposited: 4.01,
             tvl: 5292,
             address: "0x3a51269E0707A3416044bad5066858A12198fCf5"
         },
         {
             id: 2,
             name: "Bitcoin",
-            apy: 12.42,
-            available: 10,
-            deposited: 14.2,
+            apy: 3.1,
+            available: 2,
+            deposited: .056,
             tvl: 152,
             address: "0xAD2f9A55518Dba12E8AB069502820923351667C5"
         }
