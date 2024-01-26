@@ -1,6 +1,6 @@
 //import "../styling/DashboardPage.css";
 //import SendMoney from "../components/SendMoney";
-import MintNFTForm from "../components/MintNFTForm";
+
 import Button from "../components/Button";
 type ABIMethod = {
     [key: string]: any; // Loose definition to allow any properties
